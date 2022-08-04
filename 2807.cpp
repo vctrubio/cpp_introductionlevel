@@ -19,10 +19,9 @@ class Polygon {
     int width, height;
   public:
     Polygon () : width(10), height(2) {}
-    void set_values (int a, int b)
-    {	
-	width=a;
-	height=b;
+    void set_values (int a, int b) {	
+		width=a;
+		height=b;
     }
 	virtual int area () =0; //abs (abstract base class)
     	int	p_w() { return width; } //print_width

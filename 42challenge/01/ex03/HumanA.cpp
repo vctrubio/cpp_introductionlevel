@@ -1,21 +1,17 @@
 #include "HumanA.hpp"
 
 HumanA::HumanA(std::string n, Weapon &w)
-	: name (n), Weapon(w)
-{}
-
-HumanA::HumanA()
 {
-	name = "unamed";
-	type = "pistol";
+	_name = n;
+	_weapon = &w;
 }
 
 HumanA::~HumanA()
 {
-	std::cout << "ByeHumanA| ";
+	std::cout << "Bye" + _name << std::endl;
 }
 
 void	HumanA::attack(void)
 {
-	std::cout << name + " attacks with his " + type << std::endl;
+	std::cout << _name + " attacks with his " + _weapon->getType() << std::endl;
 }

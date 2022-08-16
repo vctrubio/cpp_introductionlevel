@@ -8,13 +8,13 @@
 class	Weapon
 {
 protected:
-	std::string	type;
+	std::string	_type;
 public:
 	Weapon(std::string type);
 	Weapon();
 	~Weapon();
-	void			setType(std::string type);
-	const std::string	getType(void) {return type;};
+	void				setType(std::string type);
+	const std::string&	getType(void) {return _type;};
 };
 
 #endif

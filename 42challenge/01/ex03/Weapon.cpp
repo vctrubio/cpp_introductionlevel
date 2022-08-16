@@ -6,16 +6,16 @@ Weapon::Weapon(void)
 
 Weapon::Weapon(std::string type)
 {
-	this->type = type;
+	_type = type;
 }
 
 Weapon::~Weapon()
 {
-	std::cout << type << " desconstruct\n";
+	std::cout << _type << " Weapon desconstructor\n";
 }
 
 void	Weapon::setType(std::string type)
 {
-	this->type = type;
+	_type = type;
 }
 

@@ -1,0 +1,5 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/V/Documents/42/summer22/cpp/42challenge/01/ex03'
+clang++ HumanA.cpp HumanB.cpp Weapon.cpp main.cpp  -o program
+make: Leaving directory `/Users/V/Documents/42/summer22/cpp/42challenge/01/ex03'
+ 

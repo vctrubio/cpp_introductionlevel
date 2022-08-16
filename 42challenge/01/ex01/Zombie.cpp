@@ -13,7 +13,6 @@ Zombie::Zombie(std::string name)
 	this->name = name;
 }
 
-
 Zombie::~Zombie()
 {
 	std::cout << name << "dealocated. \n";

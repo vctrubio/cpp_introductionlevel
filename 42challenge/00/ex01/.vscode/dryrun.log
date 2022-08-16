@@ -1,0 +1,5 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/V/Documents/42/summer22/cpp/42challenge/00/ex01'
+clang++ main.cpp phonebook.cpp phonebookController.cpp saveController.cpp  -o program
+make: Leaving directory `/Users/V/Documents/42/summer22/cpp/42challenge/00/ex01'
+ 

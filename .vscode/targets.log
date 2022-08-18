@@ -7,7 +7,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 
 # This program built for i386-apple-darwin11.3.0
 
-# Make data base, printed on Mon Aug  1 17:40:17 2022
+# Make data base, printed on Tue Aug 16 15:44:28 2022
 
 # Variables
 
@@ -39,44 +39,28 @@ SHELL = /bin/sh
 VSCODE_NLS_CONFIG = {"locale":"en-gb","availableLanguages":{},"_languagePackSupport":true}
 # environment
 _ = /usr/bin/make
-# environment
-VSCODE_PID = 44923
 # makefile (from `Makefile', line 1)
 MAKEFILE_LIST :=  Makefile
 # environment
-rvm_ruby_mode = 
+VSCODE_CWD = /Users/V/Documents/42/summer22/cpp/42challenge/01/ex03
 # environment
-rvm_ruby_make = 
-# environment
-VSCODE_CWD = /Users/V/Documents/42/summer22/cpp
-# environment
-Apple_PubSub_Socket_Render = /private/tmp/com.apple.launchd.gb6g8zsSo8/Render
-# environment
-rvm_pretty_print_flag = 
+Apple_PubSub_Socket_Render = /private/tmp/com.apple.launchd.DqHOBzDhEy/Render
 # environment
 PATH = /Users/V/.rvm/gems/ruby-2.5.3/bin:/Users/V/.rvm/gems/ruby-2.5.3@global/bin:/Users/V/.rvm/rubies/ruby-2.5.3/bin:/usr/local/opt/openssl@1.1/bin:./bin:./node_modules/.bin:/Users/V/.rbenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/V/.zsh/misc:/Users/V/.fig/bin:/usr/local/sbin:/Users/V/.rvm/bin
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
-rvm_niceness = 
-# environment
 FIG_CHECKED_PROMPTS = 1
 # environment
-rvm_only_path_flag = 
-# environment
-rvm_gemstone_package_file = 
-# environment
 ELECTRON_RUN_AS_NODE = 1
-# environment
-rvm_alias_expanded = 
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.NxyIfCw6IL/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.mzwAnVIclf/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
-TTY = /dev/ttys003
+TTY = /dev/ttys001
 # environment
 FIG_ENV_VAR = 1
 # environment
@@ -85,8 +69,6 @@ rvm_bin_path = /Users/V/.rvm/bin
 PWD = /Users/V/Documents/42/summer22/cpp
 # environment
 GEM_HOME = /Users/V/.rvm/gems/ruby-2.5.3
-# environment
-rvm_docs_type = 
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = undefined
 # environment
@@ -98,7 +80,7 @@ MAKEFILEPATH = $(shell /usr/bin/xcode-select -print-path 2>/dev/null || echo /De
 # environment
 VSCODE_CLI = 1
 # environment
-VSCODE_CODE_CACHE_PATH = /Users/V/Library/Application Support/Code/CachedData/3b889b090b5ad5793f524b5d1d39fda662b96a2a
+VSCODE_CODE_CACHE_PATH = /Users/V/Library/Application Support/Code/CachedData/6d9b74a70ca9c7733b29f0456fd8195364076dda
 # environment
 LOGNAME = V
 # environment
@@ -106,19 +88,13 @@ BUNDLER_EDITOR = '/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # environment
-rvm_proxy = 
-# environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
 ^D = $(patsubst %/,%,$(dir $^))
 # environment
-rvm_ruby_bits = 
-# environment
 GEM_PATH = /Users/V/.rvm/gems/ruby-2.5.3:/Users/V/.rvm/gems/ruby-2.5.3@global
 # environment
 XPC_FLAGS = 0x0
-# environment
-rvm_ruby_make_install = 
 # default
 MAKE = $(MAKE_COMMAND)
 # default
@@ -127,8 +103,6 @@ MAKECMDGOALS := all
 IRBRC = /Users/V/.rvm/rubies/ruby-2.5.3/.irbrc
 # environment
 SHLVL = 3
-# environment
-rvm_quiet_flag = 
 # default
 MAKE_VERSION := 3.81
 # environment
@@ -136,7 +110,7 @@ USER = V
 # makefile
 .DEFAULT_GOAL := all
 # environment
-TERM_SESSION_ID = C49C959B-0F53-4391-9BB7-6398AD34081C
+TERM_SESSION_ID = 17E9D939-5F68-4057-A755-72A3198D3D16
 # environment
 rvm_version = 1.29.10-next (master)
 # environment
@@ -154,7 +128,9 @@ TMPDIR = /var/folders/dx/1mwgg8zn23964hxvr_jsm4vh0000gn/T/
 # automatic
 *F = $(notdir $*)
 # environment
-VSCODE_IPC_HOOK = /Users/V/Library/Application Support/Code/1.69.2-main.sock
+VSCODE_IPC_HOOK = /Users/V/Library/Application Support/Code/1.70.1-main.sock
+# environment
+MallocNanoZone = 0
 # makefile
 MAKEFLAGS = Rrqp
 # environment
@@ -164,15 +140,11 @@ MFLAGS = -Rrqp
 # environment
 TERM_PROGRAM_VERSION = 421.1.1
 # environment
-rvm_script_name = 
-# environment
 XPC_SERVICE_NAME = 0
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
 +F = $(notdir $+)
-# environment
-rvm_sdk = 
 # environment
 __CF_USER_TEXT_ENCODING = 0x1F5:0x0:0x0
 # default
@@ -180,23 +152,15 @@ MAKEFILES :=
 # automatic
 <F = $(notdir $<)
 # environment
-rvm_silent_flag = 
-# environment
-rvm_gemstone_url = 
-# environment
 PAGER = less
 # environment
 LC_ALL = C
-# environment
-rvm_bin_flag = 
 # automatic
 ^F = $(notdir $^)
 # environment
 rvm_prefix = /Users/V
 # default
 SUFFIXES := 
-# environment
-rvm_ruby_file = 
 # default
 .INCLUDE_DIRS = /usr/local/include
 # environment
@@ -206,15 +170,11 @@ LANG = C
 # environment
 TERM = xterm-256color
 # environment
-rvm_use_flag = 
-# environment
-rvm_hook = 
+VSCODE_PID = 20281
 # environment
 MY_RUBY_HOME = /Users/V/.rvm/rubies/ruby-2.5.3
-# environment
-rvm_nightly_flag = 
 # variable set hash-table stats:
-# Load=101/1024=10%, Rehash=0, Collisions=5/127=4%
+# Load=81/1024=8%, Rehash=0, Collisions=2/107=2%
 
 # Pattern-specific Variable Values
 
@@ -295,6 +255,6 @@ Makefile:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Mon Aug  1 17:40:17 2022
+# Finished Make data base on Tue Aug 16 15:44:28 2022
 
  

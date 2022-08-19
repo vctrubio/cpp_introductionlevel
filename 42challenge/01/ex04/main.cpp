@@ -2,20 +2,37 @@
 #include <string>
 #include <iostream>
 
-
 std::string	gnl(std::string	&line, std::string &find, std::string &replace)
 {
 	std::string	str;
-
-	str = "myding dong";
-
+	std::string	cpy;
+	std::string	tmp;
+	int i = 0;
+	
+	cpy = line;
+	while (i <= cpy.length() && cpy.length() >= find.length()) 
+	{
+		tmp = cpy.substr(i, find.length());
+//		std::cout << tmp << "|\n"; 
+		if (tmp == find)
+		{
+//			std::cout << "FOUND" << tmp << "REPLACE" << replace << std::endl;
+			i += tmp.length();
+			str += replace;
+		}
+		else
+		{
+			str += cpy[i];
+			i++;
+		}
+	}
 	return (str);
 
 }
 
 void	replace(std::string file, std::string s1, std::string s2)
 {
-	std::cout << file + s1 + s2 << std::endl;
+//	std::cout << file + s1 + s2 << std::endl;
 	std::ifstream	inFile;
 	std::ofstream	outFile;
 	std::string	outFileName;
@@ -37,7 +54,9 @@ void	replace(std::string file, std::string s1, std::string s2)
 
 	while (std::getline(inFile, line))
 	{
-		outFile << gnl(file, s1, s2) << std::endl;
+		//std::cout << "We have LINE= " + line +'\n';
+//		std::cout << "CHECK -\n";
+		outFile << gnl(line, s1, s2) << std::endl;
 	}
 
 	outFile.close();
@@ -61,7 +80,7 @@ int	validate(int ac, char **av)
 int	main(int ac, char **av)
 {
 	std::string	u="file";
-	std::string	i="youur";
+	std::string	i="thi";
 	std::string	o="momy";
 
 	replace(u, i, o);

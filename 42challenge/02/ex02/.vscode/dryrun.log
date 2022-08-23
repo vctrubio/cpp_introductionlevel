@@ -1,0 +1,5 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/V/Documents/42/summer22/cpp/42challenge/02/ex00'
+clang++ Fixed.cpp main.cpp  -o program
+make: Leaving directory `/Users/V/Documents/42/summer22/cpp/42challenge/02/ex00'
+ 

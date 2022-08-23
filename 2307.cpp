@@ -33,7 +33,6 @@ CVector operator/ (const CVector &lhs, const CVector &rhs) // / because operator
 //CVector operator+ (const CVector&); // function that returns a CVector
 
 
-
 int main () {
   CVector foo (3,1);
   CVector bar (1,2);

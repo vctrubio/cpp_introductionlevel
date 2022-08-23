@@ -115,7 +115,7 @@ class Example6 {
     Example6 (const string& str) : ptr(new string(str)) {}
     ~Example6 () {delete ptr;}
     // move constructor
-    Example6 (Example6&& x) : ptr(x.ptr) {x.ptr=nullptr;}
+    Example6 (Example6& x) : ptr(x.ptr) {x.ptr=nullptr;}
     // move assignment
     Example6& operator= (Example6&& x) {
       delete ptr;

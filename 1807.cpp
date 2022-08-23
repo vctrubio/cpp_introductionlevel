@@ -33,7 +33,7 @@ namespace	bar
 	void setb(int b)
 	{
 		bar::b = b;
-	} //there must be a shorter way for self::var
+	} //there must be a shorter way for self::var (probably not having the same var and private?)
 }
 
 

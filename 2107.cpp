@@ -14,7 +14,6 @@ int main()
 {
 	Colors		mycolor;
 	months_t	mymonth;
-	y2k		test;
 
 	mycolor = Colors::blue;
 	mymonth = april;

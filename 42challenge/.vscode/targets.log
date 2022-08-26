@@ -7,7 +7,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 
 # This program built for i386-apple-darwin11.3.0
 
-# Make data base, printed on Fri Aug 12 18:28:17 2022
+# Make data base, printed on Thu Aug 25 18:34:02 2022
 
 # Variables
 
@@ -40,7 +40,7 @@ VSCODE_NLS_CONFIG = {"locale":"en-gb","availableLanguages":{},"_languagePackSupp
 # environment
 _ = /usr/bin/make
 # environment
-VSCODE_PID = 27221
+VSCODE_PID = 81556
 # makefile
 MAKEFILE_LIST := 
 # environment
@@ -50,11 +50,11 @@ rvm_ruby_make =
 # environment
 VSCODE_CWD = /Users/V/Documents/42/summer22/cpp/42challenge
 # environment
-Apple_PubSub_Socket_Render = /private/tmp/com.apple.launchd.slaOU9YIOT/Render
+Apple_PubSub_Socket_Render = /private/tmp/com.apple.launchd.sF3uVmUVqS/Render
 # environment
 rvm_pretty_print_flag = 
 # environment
-PATH = /Users/V/.rvm/gems/ruby-2.5.3/bin:/Users/V/.rvm/gems/ruby-2.5.3@global/bin:/Users/V/.rvm/rubies/ruby-2.5.3/bin:/usr/local/opt/openssl@1.1/bin:./bin:./node_modules/.bin:/Users/V/.rbenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/V/.zsh/misc:/Users/V/.fig/bin:/usr/local/sbin:/Users/V/.rvm/bin
+PATH = /Users/V/.rvm/gems/ruby-2.5.3/bin:/Users/V/.rvm/gems/ruby-2.5.3@global/bin:/Users/V/.rvm/rubies/ruby-2.5.3/bin:/usr/local/opt/openssl@1.1/bin:./bin:./node_modules/.bin:/Users/V/.rbenv/bin:/Library/Frameworks/Python.framework/Versions/3.10/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/V/.zsh/misc:/Users/V/.fig/bin:/usr/local/sbin:/Users/V/.rvm/bin
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
@@ -72,11 +72,11 @@ rvm_alias_expanded =
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.Oq6vcGqTTY/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.fCkvqkzBdZ/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
-TTY = /dev/ttys000
+TTY = /dev/ttys003
 # environment
 FIG_ENV_VAR = 1
 # environment
@@ -98,13 +98,13 @@ MAKEFILEPATH = $(shell /usr/bin/xcode-select -print-path 2>/dev/null || echo /De
 # environment
 VSCODE_CLI = 1
 # environment
-VSCODE_CODE_CACHE_PATH = /Users/V/Library/Application Support/Code/CachedData/6d9b74a70ca9c7733b29f0456fd8195364076dda
+VSCODE_CODE_CACHE_PATH = /Users/V/Library/Application Support/Code/CachedData/e4503b30fc78200f846c62cf8091b76ff5547662
 # environment
 LOGNAME = V
 # environment
 BUNDLER_EDITOR = '/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl' -a
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # environment
 rvm_proxy = 
 # environment
@@ -136,7 +136,7 @@ USER = V
 # makefile
 .DEFAULT_GOAL := 
 # environment
-TERM_SESSION_ID = 7C2D3DB2-69EE-469E-9898-FFA6B52F30E6
+TERM_SESSION_ID = A080AC13-F745-4CDA-856A-F8ACAC235F40
 # environment
 rvm_version = 1.29.10-next (master)
 # environment
@@ -154,7 +154,7 @@ TMPDIR = /var/folders/dx/1mwgg8zn23964hxvr_jsm4vh0000gn/T/
 # automatic
 *F = $(notdir $*)
 # environment
-VSCODE_IPC_HOOK = /Users/V/Library/Application Support/Code/1.70.1-main.sock
+VSCODE_IPC_HOOK = /Users/V/Library/Application Support/Code/1.70.2-main.sock
 # environment
 MallocNanoZone = 0
 # makefile
@@ -224,9 +224,9 @@ rvm_nightly_flag =
 
 # Directories
 
-# . (device 16777220, inode 8637348701): 5 files, no impossibilities.
+# . (device 16777220, inode 8637348701): 7 files, no impossibilities.
 
-# 5 files, no impossibilities in 1 directories.
+# 7 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -298,7 +298,7 @@ GNUmakefile:
 # strcache size: total = 0 / max = 0 / min = 4096 / avg = 0
 # strcache free: total = 0 / max = 0 / min = 4096 / avg = 0
 
-# Finished Make data base on Fri Aug 12 18:28:17 2022
+# Finished Make data base on Thu Aug 25 18:34:02 2022
 
  
 make: *** No rule to make target `all'.  Stop.

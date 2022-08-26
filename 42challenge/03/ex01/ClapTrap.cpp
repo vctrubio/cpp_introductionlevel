@@ -1,5 +1,15 @@
 #include "ClapTrap.hpp"
 
+ClapTrap::ClapTrap()
+{
+	name = "Defualt CTrap";
+	hitPoints = 10;
+	energyPoints = 10;
+	attackDamage = 0;
+	
+	std::cout << name << " Default Created Constructor" << std::endl;
+}
+
 ClapTrap::ClapTrap(std::string str)
 {
 	name = str;

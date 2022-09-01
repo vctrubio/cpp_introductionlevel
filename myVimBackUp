@@ -1,0 +1,17 @@
+syntax on
+set hidden
+set autoindent
+set relativenumber
+filetype on
+set wildmenu
+set wildmode=list:longest
+set number
+set backspace=indent,eol,start
+set showcmd
+set showmatch
+if has("multi_byte")
+  set encoding=utf-8
+  setglobal fileencoding=utf-8
+else
+  echoerr "Sorry, this version of (g)vim was not compiled with +multi_byte"
+endif

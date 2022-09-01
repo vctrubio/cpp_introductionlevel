@@ -1,9 +1,15 @@
 #include "Dog.hpp"
 
 Dog::Dog()
-	:name("DogStar")
 {
+	type = "Dog";
 	std::cout << "Dog Class Constructor\n";
+}
+
+Dog::Dog(const Dog &oldDog)
+{
+	type = oldDog.type;
+	std::cout << "Dog cpy Constructor\n";
 }
 
 Dog&	Dog::operator=(const Dog &oldDog)

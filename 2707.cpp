@@ -69,10 +69,10 @@ class Team: public Car  {
 int main()
 {
 	string	s1 {"Frank\nwants\nmore"};
-	Car	myCar(50);
+	Car		myCar(50);
 	Driver	alonso("Alonso");
 	Team	f1;
-	Car	*p_alonso;
+	Car		*p_alonso;
 
 	p_alonso = &alonso;
 //	p_alonso->alonso.set_kg(88); //this does not work because not a member- but a derived class

@@ -5,9 +5,9 @@
 
 class	Dog : public Animal
 {
-	std::string	name;
 public:
 	Dog();
+	Dog(const Dog &oldDog);
 	Dog& operator= (const Dog &oldDog);
 	~Dog();
 

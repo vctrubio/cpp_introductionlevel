@@ -12,7 +12,7 @@ public:
 	Bureaucrat();
 	~Bureaucrat();
 	Bureaucrat(std::string name, int nb);
-    Bureaucrat(Bureaucrat &bureaucrat);
+	Bureaucrat(Bureaucrat &bureaucrat);
 	Bureaucrat& operator=(const Bureaucrat &oldB);
 	Bureaucrat operator--(int);
 	Bureaucrat operator--();

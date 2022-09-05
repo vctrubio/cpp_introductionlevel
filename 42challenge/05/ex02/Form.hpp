@@ -5,18 +5,19 @@
 
 class Form
 {
-	std::string	_name;
-	int			_myGrade;
-	int			_exeGrade;
-	bool		_signed;
+	const std::string	_name;
+	const int			_myGrade;
+	const int			_exeGrade;
+	void				validateGrade();
+	bool				_signed;
 public:
 	Form();
 	Form(std::string name, int grade, int exe);
 	Form(Form &oldForm);
 	~Form();
 
-	void 	operator= (Form &oldForm);
-	void	beSigned(Bureaucrat &b);
+	void 		operator= (Form &oldForm);
+	void		beSigned(Bureaucrat &b);
 
 	std::string getName();
 	int			getGrade();

@@ -1,45 +1,50 @@
 #include "Form.hpp"
 
 Form::Form()
+	: _name("Default Form"),
+	  _myGrade(42),
+	  _exeGrade(149),
+	  _signed(false)
 {
-	_name = "Default Form name";
-	_myGrade = 42;
-	_signed = false;
 }
 
 Form::Form(std::string name, int grade, int exe)
+	: _name(name),
+	  _myGrade(grade),
+	  _exeGrade(exe),
+	  _signed(false)
 {
-	_name = name;
-	_signed = false;
-
-	if (grade < 1)
-		throw(FormGradeTooLowException());
-	else if (grade > 150)
-		throw(FormGradeTooHighException());
-	_myGrade = grade;
-
-	if (exe < 1)
-		throw(FormGradeTooLowException());
-	else if (exe > 150)
-		throw(FormGradeTooHighException());
-	_exeGrade = exe;
+	validateGrade();
+	std::cout << _name << " Constructed\n";
 }
 
 Form::Form(Form &oldForm)
+	:_name(oldForm._name),
+	_myGrade(oldForm._myGrade),
+	_exeGrade(oldForm._exeGrade),
+	_signed(false)
 {
-	_name = oldForm._name;
-	_myGrade = oldForm._myGrade;
-	_exeGrade = oldForm._exeGrade;
-	_signed = false;
+	std::cout << "Copied Constructor\n";
 }
 
 Form::~Form()
 {
+	std::cout << "Deconsturct\n";
 }
 
 void Form::operator=(Form &oldForm)
 {
 	_signed = oldForm._signed;
+}
+
+//
+void Form::validateGrade()
+{
+	if (_myGrade < 1 || _exeGrade < 1)
+		throw (GradeTooHighException());
+	if (_myGrade > 150 || _exeGrade < 0)
+		throw (GradeTooLowException());
+
 }
 
 //
@@ -82,8 +87,8 @@ void Form::beSigned(Bureaucrat &b)
 //
 std::ostream &operator<<(std::ostream &output, Form &f)
 {
-	output << "ExeGrade: " << f.getExeGrade() << "\nmyGrade: " << f.getGrade() << "\nSigned (" << f.getSigned() << ") " << f.getName() << \
-	std::endl << std::endl;
+	output << f.getName() << " || ExeGrade: " << f.getExeGrade() << " myGrade: " << f.getGrade() << " Signed (" << f.getSigned() << ") " << std::endl
+		   << std::endl;
 
 	return (output);
 }

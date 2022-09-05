@@ -1,34 +1,35 @@
 #include "Bureaucrat.hpp"
 
 Bureaucrat::Bureaucrat()
-	: name("Default B"), grade(1)
+	: _name("Default Burrito"), _grade(1)
 {
 }
 
 Bureaucrat::Bureaucrat(std::string name, int nb)
-	: name(name)
+	: _name(name)
 {
 	if (nb > 150)
-		throw (GradeTooLowException());
+		throw(GradeTooLowException());
 	if (nb < 1)
-		throw (GradeTooHighException());
-	grade = nb;
+		throw(GradeTooHighException());
+	_grade = nb;
+	std::cout << _name << " created\n";
 }
 
 Bureaucrat::~Bureaucrat()
 {
+	std::cout << "Deconstructor\n";
 }
 
 Bureaucrat::Bureaucrat(Bureaucrat &bureaucrat)
 {
-    *this = bureaucrat;
+	*this = bureaucrat;
 	// this->grade = 100;
 }
 
-
-Bureaucrat& Bureaucrat::operator= (const Bureaucrat &oldB)
+Bureaucrat &Bureaucrat::operator=(const Bureaucrat &oldB)
 {
-	grade = oldB.grade;
+	_grade = oldB._grade;
 	return (*this);
 }
 
@@ -58,30 +59,31 @@ Bureaucrat Bureaucrat::operator++()
 //
 void Bureaucrat::gradeUp(int i)
 {
-	if (grade + i > 150)
+	if (_grade + i > 150)
 		throw(GradeTooLowException());
-	grade += i;
+	_grade += i;
+	std::cout << "New Grade: " << _grade << std::endl;
 }
 
 void Bureaucrat::gradeDown(int i)
 {
-	if (grade - i < 1)
+	if (_grade - i < 1)
 		throw(GradeTooHighException());
-	grade -= i;
+	_grade -= i;
+	std::cout << "New Grade: " << _grade << std::endl;
 }
 
 std::string Bureaucrat::getName()
 {
-	return (name);
+	return (_name);
 }
 
 int Bureaucrat::getGrade()
 {
-	return (grade);
+	return (_grade);
 }
-
 //
-std::ostream& operator<<(std::ostream& output, Bureaucrat& b)
+std::ostream &operator<<(std::ostream &output, Bureaucrat &b)
 {
 	output << b.getName() << " : " << b.getGrade() << std::endl;
 	return (output);

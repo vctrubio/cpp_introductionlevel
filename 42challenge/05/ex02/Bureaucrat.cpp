@@ -1,7 +1,7 @@
 #include "Bureaucrat.hpp"
 
 Bureaucrat::Bureaucrat()
-	: _name("Default B"), _grade(1)
+	: _name("Default Burrito"), _grade(1)
 {
 }
 
@@ -13,10 +13,12 @@ Bureaucrat::Bureaucrat(std::string name, int nb)
 	if (nb < 1)
 		throw(GradeTooHighException());
 	_grade = nb;
+	std::cout << _name << " created\n";
 }
 
 Bureaucrat::~Bureaucrat()
 {
+	std::cout << "Deconstructor\n";
 }
 
 Bureaucrat::Bureaucrat(Bureaucrat &bureaucrat)
@@ -60,6 +62,7 @@ void Bureaucrat::gradeUp(int i)
 	if (_grade + i > 150)
 		throw(GradeTooLowException());
 	_grade += i;
+	std::cout << "New Grade: " << _grade << std::endl;
 }
 
 void Bureaucrat::gradeDown(int i)
@@ -67,6 +70,7 @@ void Bureaucrat::gradeDown(int i)
 	if (_grade - i < 1)
 		throw(GradeTooHighException());
 	_grade -= i;
+	std::cout << "New Grade: " << _grade << std::endl;
 }
 
 std::string Bureaucrat::getName()

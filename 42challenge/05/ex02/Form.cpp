@@ -15,7 +15,7 @@ Form::Form(std::string name, int grade, int exe)
 	  _signed(false)
 {
 	validateGrade();
-	std::cout << _name << " Constructed\n";
+	// std::cout << _name << " Constructed\n";
 }
 
 Form::Form(Form &oldForm)
@@ -24,12 +24,12 @@ Form::Form(Form &oldForm)
 	_exeGrade(oldForm._exeGrade),
 	_signed(false)
 {
-	std::cout << "Copied Constructor\n";
+	// std::cout << "Copied Constructor\n";
 }
 
 Form::~Form()
 {
-	std::cout << "Deconsturct\n";
+	// std::cout << "Deconsturct\n";
 }
 
 void Form::operator=(Form &oldForm)
@@ -52,6 +52,10 @@ std::string Form::getName()
 {
 	return (_name);
 }
+const std::string Form::getConstName()
+{
+	return (_name);
+}
 int Form::getGrade()
 {
 	return (_myGrade);
@@ -69,7 +73,7 @@ void Form::beSigned(Bureaucrat &b)
 {
 	if (b.getGrade() >= getGrade())
 	{
-		b.signForm(_signed, _name);
+		b.signForm(*this);
 		throw FormGradeTooLowException();
 	}
 	else
@@ -79,10 +83,41 @@ void Form::beSigned(Bureaucrat &b)
 		else
 		{
 			_signed = true;
-			b.signForm(_signed, _name);
+			b.signForm(*this);
 		}
 	}
 }
+//
+
+void Form::checkExecution(Bureaucrat& executor)
+{
+	if (_exeGrade < executor.getGrade())
+		throw GradeTooLowException();
+	else if (!_signed)
+		throw "Form not signed";
+}
+
+void	Form::executeFree(Bureaucrat& executor)
+{
+	try
+	{
+		checkExecution(executor);
+		executeAction();
+	}
+	catch(...) 	// catch(const std::exception& e)
+	{
+		throw ;
+	}
+	
+}
+
+
+void	Form::execute(const Bureaucrat& executor) const
+{
+	// Bureaucrat b = const_cast<class Burreaucrat*>(executor);
+	
+}
+
 
 //
 std::ostream &operator<<(std::ostream &output, Form &f)

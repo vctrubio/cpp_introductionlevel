@@ -3,6 +3,9 @@
 
 #include <iostream>
 
+#include "Form.hpp"
+
+class Form;
 class Bureaucrat
 {
 	const std::string _name;
@@ -19,11 +22,14 @@ public:
 	Bureaucrat operator++(int);
 	Bureaucrat operator++();
 
-    void		signForm(bool status, std::string name);
+    void		signForm(Form &form);
 	void 		gradeUp(int i);
 	void 		gradeDown(int i);
 	std::string getName();
 	int 		getGrade();
+	//
+	// void		signFormTry(Form &form);
+	void		executeForm(const Form& form);
 };
 
 class GradeTooHighException : public std::exception

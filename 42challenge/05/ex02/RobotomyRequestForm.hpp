@@ -16,4 +16,13 @@ public:
 	void		executeAction()const;
 };
 
+class FailCreateRobFile : public std::exception
+{
+public:
+	const char *what(void) const throw()
+	{
+		return ("Failed to create _robotomy");
+	}
+};
+
 #endif

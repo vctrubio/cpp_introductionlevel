@@ -83,14 +83,26 @@ int Bureaucrat::getGrade()
 	return (_grade);
 }
 //
-void Bureaucrat::signForm(bool status, std::string name)
+void Bureaucrat::signForm(Form &form)
 {
-	if (status == false)
-		std::cout << "Señor " << _name << ", was not good to sign " << name << " because of bad grade" << std::endl;
+	if (form.getSigned() == false)
+		std::cout << "Señor " << _name << ", was not good to sign " << form.getName() << " because of bad grade" << std::endl;
 	else
-		std::cout << "Señor " << _name << ", succesfully signed " << name << std::endl;
+		std::cout << "Señor " << _name << ", succesfully signed " << form.getName() << std::endl;
 }
 
+void Bureaucrat::executeForm(const Form& form)
+{
+	try
+	{
+		form.execute(*this);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	
+}
 //
 std::ostream &operator<<(std::ostream &output, Bureaucrat &b)
 {

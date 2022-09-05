@@ -11,6 +11,7 @@
 
 class Intern
 {
+public:
 	Intern();
 	Intern(const Intern &oldIntern);
 	Intern &operator=(const Intern &oldIntern);

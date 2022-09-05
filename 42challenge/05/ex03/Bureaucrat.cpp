@@ -96,6 +96,7 @@ void Bureaucrat::executeForm(const Form& form)
 	try
 	{
 		form.execute(*this);
+		// FUCKIGN CONST AND NON CONST
 	}
 	catch(const std::exception& e)
 	{

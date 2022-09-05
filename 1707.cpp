@@ -12,7 +12,6 @@ cerr -stder
 clog -stdlog
 */
 
-
 //pasing & refrence- changes the values
 //does not need to malloc new int a b c
 void	duplicate(int& a, int& b, int& c)                                                                             

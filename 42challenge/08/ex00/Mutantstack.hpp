@@ -1,7 +1,18 @@
-#ifndef M_HPP
-#define H_HPP
+#ifndef	MUTANTSTACK_HPP 
+#define MUTANTSTACK_HPP
 
 
+#include <stack>
+#include <iostream>
+
+/*
+deque 
+vectors 
+list
+
+
+
+*/
 class MutantStack
 {
 

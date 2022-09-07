@@ -2,6 +2,8 @@ CC = clang++
 #FLAGS = -Wall -Wextra -Werror
 FLAGS =
 RM = rm -f
+##g++ --std=c++17 for advance pg
+
 
 NAME = program
 SRCS = $(wildcard *.cpp)
@@ -21,3 +23,5 @@ fclean: clean
 re: fclean $(NAME)
 
 .PHONY: all clean fclean re
+
+

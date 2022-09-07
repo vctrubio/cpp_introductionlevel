@@ -20,7 +20,21 @@ int main()
 	if (r1 != v.end())
 		std::cout << *r1 << " found\n";
 
-
-
-//  = { 1, 2, 3, 4, 5 };
 }
+
+
+/* extra notes
+
+struct C_Cell {
+
+  Point3f min, max;
+
+};
+then I created a vector of C_Cell
+
+std::vector< C_Cell> grid;
+
+for (std::vector<C_Cell>::iterator it = grid.begin() ; it != grid.end(); ++it)
+(*it).min
+
+*/

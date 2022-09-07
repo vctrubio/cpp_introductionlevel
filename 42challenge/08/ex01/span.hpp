@@ -2,19 +2,25 @@
 #define SPAN_HPP
 
 #include <vector>
+#include <exception>
 #include <iostream>
-
+#include <iterator>
 class Span
 {
 	unsigned int		_n;
-	std::vector<int>	_nb;
 public:
+	std::vector<int>	_nb;
 	Span(){};
 	Span(unsigned int n):_n(n){};
 	~Span(){};
 
-	void	add_number(int b);
+	Span	&operator= (Span &span);
+	void				add_number(int b);
+	std::vector<int>	rtn_ptr();
 };
+
+std::ostream &operator << (std::ostream &stream, Span &span);
+
 
 
 #endif

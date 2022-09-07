@@ -1,23 +1,26 @@
-#include "Mutantstack.hpp"
+#include "easyfind.hpp"
 
-/*
-empty
-size
-back
-push_back
-pop_back
-*/
+#include <tuple>
+
+using namespace std;
 
 int main()
 {
-	std::stack<int> mystack;
+	std::vector<int> v;
+	tuple<int> t;
 
-	mystack.push(22);
-	mystack.push(22);
-	while (!mystack.empty())
-	{
-			std::cout << mystack.top() << std::endl;
-			mystack.pop();
-	}
+	// std::vector<int, char> s;
 
-};
+	for (int i = 1; i < 5; i++)
+		v.push_back(i);
+
+	std::vector<int>::iterator r1;
+
+	r1 = easyfind(v, 2);
+	if (r1 != v.end())
+		std::cout << *r1 << " found\n";
+
+
+
+//  = { 1, 2, 3, 4, 5 };
+}

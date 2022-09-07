@@ -35,5 +35,8 @@ int main()
 	std::vector<int> p = n.rtn_ptr();
 	std::cout << "HIº\n"; 
 
-	std::cout << n;
+//	std::cout << n;
+
+	std::cout <<	n.shortestSpan();
+
 };

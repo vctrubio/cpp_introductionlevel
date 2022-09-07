@@ -17,6 +17,9 @@ public:
 	Span	&operator= (Span &span);
 	void				add_number(int b);
 	std::vector<int>	rtn_ptr();
+	int					longestSpan();
+	int					shortestSpan();
+	unsigned int		diff(int min, int max);
 };
 
 std::ostream &operator << (std::ostream &stream, Span &span);

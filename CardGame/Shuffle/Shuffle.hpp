@@ -28,7 +28,7 @@ class Player
 public:
 		Player(){};
 		~Player(){}
-	card	hand[2];
+		card	hand[2];
 };
 
 #endif

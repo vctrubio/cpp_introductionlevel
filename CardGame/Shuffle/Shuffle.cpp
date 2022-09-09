@@ -53,6 +53,12 @@ ostream& operator<<(ostream& os, const card &c)
 	return os;
 };
 
+void	moveCard(card *c1, card *c2)
+{
+	cout << "moveCard: " << *c1 << endl;
+};
+
+
 int main()
 {
 		Shuffle	s;
@@ -64,5 +70,6 @@ int main()
 		
 		cout << s.deck.front();
 		cout << "HEllo\n";
+		moveCard(&s.deck.front(), &p.hand[0]);
 		s.print();
 };

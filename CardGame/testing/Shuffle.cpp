@@ -26,6 +26,6 @@ void	Shuffle::changeCard()
 
 // int main()
 // {
-// 		Shuffle	s;
+// 		// Shuffle	s;
 
 // };

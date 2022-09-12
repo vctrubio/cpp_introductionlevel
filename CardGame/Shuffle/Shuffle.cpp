@@ -56,6 +56,9 @@ ostream& operator<<(ostream& os, const card &c)
 void	moveCard(card *c1, card *c2)
 {
 	cout << "moveCard: " << *c1 << endl;
+	*c2 = *c1;
+
+
 };
 
 
@@ -71,5 +74,7 @@ int main()
 		cout << s.deck.front();
 		cout << "HEllo\n";
 		moveCard(&s.deck.front(), &p.hand[0]);
+		cout << p.hand[0];
+		remove.s.deck.front();	
 		s.print();
 };

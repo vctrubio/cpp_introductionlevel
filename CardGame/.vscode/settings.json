@@ -7,6 +7,9 @@
 		"iosfwd": "cpp",
 		"cstdlib": "cpp",
 		"memory": "cpp",
-		"string": "cpp"
+		"string": "cpp",
+		"tuple": "cpp",
+		"array": "cpp",
+		"map": "cpp"
 	}
 }

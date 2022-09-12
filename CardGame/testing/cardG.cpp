@@ -50,15 +50,21 @@ public:
 
 	void	*who;
 
-	// void(*belongsTo);
-	// void set_ptr(void *ptr);
 	void	iam() {cout << "IAM " <<  who << endl;};
-	void	display();
+	void	display(void *c);
 };
 
-void	Card2::display()
+void	Card2::display(void *c)
 {
 	//print out who -> name
+	if (c == who)
+	{
+		cout << "YES\n";
+	}
+
+	cout << c->name; //how do i deference this man
+
+	
 };
 
 
@@ -82,4 +88,6 @@ int main()
 
 	c2.who = &p1;
 	c2.iam();
+
+	c2.display(&p1);
 }

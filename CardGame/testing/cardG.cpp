@@ -53,8 +53,13 @@ public:
 	// void(*belongsTo);
 	// void set_ptr(void *ptr);
 	void	iam() {cout << "IAM " <<  who << endl;};
+	void	display();
 };
 
+void	Card2::display()
+{
+	//print out who -> name
+};
 
 
 int main()
@@ -68,11 +73,13 @@ int main()
 	// c.iam();
 	// c.count();
 
-
 	Card2		c2;
 	Dealer		d1;
+	Player		p1;
 
 	c2.who = &d1;
 	c2.iam();
 
+	c2.who = &p1;
+	c2.iam();
 }

@@ -1,6 +1,14 @@
 #include "Headers.hpp"
 
+//__APPLE__
+#ifndef __unix
+#define I 24
+#else
+#define I 4
+#endif
 using namespace std;
+
+
 
 class Player
 {
@@ -23,11 +31,11 @@ public:
 template <class T>
 class Card
 {
+	T	*who;
 public:
 	Card(){};
 	~Card(){};
 
-	T	*who;
 	// void(*belongsTo);
 	// void set_ptr(void *ptr);
 	void	iam() {cout << "IAM " << who->name << endl;};
@@ -39,6 +47,15 @@ void	Card<T>::count()
 {
 	cout << "count is working, but do we really need do define template every time \n";
 }
+
+template <class T>
+T&	rtnF(void *ptr)
+{
+	T	&p = static_cast<T>(ptr);
+
+	return (p);
+};
+
 //////////
 
 
@@ -54,18 +71,22 @@ public:
 	void	display(void *c);
 };
 
+ostream &operator<<(ostream &os, const Player &c)
+{
+	os << c.name << endl;
+	return (os);
+}
+
 void	Card2::display(void *c)
 {
-	//print out who -> name
+
+	cout << c << " is a pointer \n"; //how do i deference this //print out who -> name
 	if (c == who)
 	{
 		cout << "YES\n";
 	}
-
-	cout << c->name; //how do i deference this man
-
-	
 };
+
 
 
 int main()
@@ -83,11 +104,18 @@ int main()
 	Dealer		d1;
 	Player		p1;
 
+	Player		*p3;
+
 	c2.who = &d1;
 	c2.iam();
+	c2.display(&p1);
 
 	c2.who = &p1;
 	c2.iam();
 
 	c2.display(&p1);
+
+	
+	// rtnF<Player>(p3);
+	// cout << "is I: " << I << endl;
 }

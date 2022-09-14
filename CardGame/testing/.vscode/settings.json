@@ -30,6 +30,7 @@
   ],
   "files.associations": {
     "iostream": "cpp",
-    "typeinfo": "cpp"
+    "typeinfo": "cpp",
+    "iosfwd": "cpp"
   }
 }

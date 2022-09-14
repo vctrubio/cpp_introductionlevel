@@ -22,8 +22,6 @@ void	Shuffle::changeCard()
 	// cout << "Test " << get<0>(Ndeck.at(0)) << endl;
 };
 
-
-
 // int main()
 // {
 // 		// Shuffle	s;

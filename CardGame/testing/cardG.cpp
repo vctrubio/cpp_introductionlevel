@@ -9,7 +9,6 @@
 using namespace std;
 
 
-
 class Player
 {
 public:
@@ -79,8 +78,22 @@ ostream &operator<<(ostream &os, const Player &c)
 
 void	Card2::display(void *c)
 {
+	Player *p;
+	Dealer *d;
 
-	cout << c << " is a pointer \n"; //how do i deference this //print out who -> name
+	d = static_cast<Dealer*>(c);
+
+	try
+	{
+		p = static_cast<Player*>(c);
+		cout << p->name << " PTR" << endl;
+		cout << d->name << " DDPTR" << endl;
+	}
+	catch(int i)
+	{
+		cout << "Not here\n";
+	}
+	// cout << (*c) << " is a pointer \n"; //how do i deference this //print out who -> name
 	if (c == who)
 	{
 		cout << "YES\n";
@@ -115,6 +128,10 @@ int main()
 
 	c2.display(&p1);
 
+
+	Dealer		d2;
+	c2.who = &d2;
+	c2.display(&d2);
 	
 	// rtnF<Player>(p3);
 	// cout << "is I: " << I << endl;

@@ -16,9 +16,6 @@ public:
 	Card& operator= (const Card &oldCard);
 	~Card();
 
-	// char	suit() {return c;};
-	// int		nb() {return nb;};
-
 	void	getWho();
 	void	setWho(void *ptr) {who = ptr; taken = true;};
 

@@ -20,7 +20,4 @@
 #include <iostream>
 #include <iomanip>
 #include <dirent.h>
-
-using namespace std;
-
 #endif

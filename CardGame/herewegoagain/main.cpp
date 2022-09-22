@@ -12,7 +12,6 @@ int main()
 	Card	*c2 = deck->deal();
 	Card	*c3 = deck->deal();
 
-
 	cout << "Hello Card Game\n";
 
 	// p->dealCard(c);
@@ -22,6 +21,5 @@ int main()
 	// c->getWho();
 	// c->setWho((void*)p);
 	cout << *p << endl;
-
 
 }

@@ -46,3 +46,17 @@ Deck::~Deck()
 		delete cards[count];
 	};
 }
+
+Card*	Deck::deal()
+{
+	for (int i = 0; i < 52; i++)
+	{
+		if (!cards[i]->taken)
+		{
+			cards[i]->taken = true;
+			return (cards[i]);
+		}
+	}
+	return (cards[51]);
+	//try catch statement missing
+}

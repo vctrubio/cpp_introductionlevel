@@ -1,7 +1,7 @@
 #include "Card.hpp"
 
 Card::Card(char c, int i)
-	:c(c), nb(i)
+	:c(c), nb(i), taken(false)
 {
 
 	// cout << card << endl;

@@ -10,6 +10,11 @@ int main()
 
 	Card	*card;
 
-	card = deck->cards[51];
+	// card = deck->cards[0];
+	card = deck->deal();
+	card = deck->deal();
+	card = deck->deal();
 	cout << *card;
 }
+
+

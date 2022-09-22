@@ -8,6 +8,7 @@ class Card
 {
 	char	c;
 	int		nb;
+	bool	taken;
 public:
 	Card(char c, int i);
 	Card(const Card &oldCard);

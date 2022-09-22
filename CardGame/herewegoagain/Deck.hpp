@@ -6,14 +6,15 @@
 
 class Deck
 {
-public:
 	Card	*cards[52];
+public:
 	Deck();
 	Deck(const Deck &oldDeck);
 	Deck& operator= (const Deck &oldDeck);
 	~Deck();
 
-
+	Card*	rtnCard(int i) {return cards[i];};
+	Card*	deal(); //deal needs to update card status and take an argument
 };
 
 #endif

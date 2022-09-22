@@ -9,7 +9,12 @@ int main()
 
 	cout << "Hello Card Game\n";
 
+	Card	*c = deck->rtnCard(0);
+
 	Player	*p = new Player();
+
+	c->setWho((void*)p);
+	c->getWho();
 
 	cout << *p << endl;
 }

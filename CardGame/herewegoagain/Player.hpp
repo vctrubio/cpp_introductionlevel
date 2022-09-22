@@ -6,6 +6,8 @@
 
 static int	seat_number = 0;
 
+class Card;
+
 class Player
 {
 	int		seat;
@@ -17,6 +19,7 @@ public:
 	Player& operator= (const Player &oldPlayer);
 	~Player();
 
+	string	getName(){return name;};
 	friend ostream&	operator<<(ostream &os, const Player &player);
 };
 

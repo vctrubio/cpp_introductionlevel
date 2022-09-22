@@ -1,6 +1,7 @@
 #include "Headers.hpp"
 #include "Deck.hpp"
 #include "Card.hpp"
+#include "Player.hpp"
 
 int main()
 {
@@ -8,4 +9,7 @@ int main()
 
 	cout << "Hello Card Game\n";
 
+	Player	*p = new Player();
+
+	cout << *p << endl;
 }

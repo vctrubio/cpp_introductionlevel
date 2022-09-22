@@ -3,7 +3,6 @@
 
 #include "Headers.hpp"
 
-
 class Card
 {
 	char	c;

@@ -6,8 +6,8 @@
 
 class Deck
 {
-	Card	*cards[13];
 public:
+	Card	*cards[52];
 	Deck();
 	Deck(const Deck &oldDeck);
 	Deck& operator= (const Deck &oldDeck);

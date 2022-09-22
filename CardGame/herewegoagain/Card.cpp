@@ -1,9 +1,10 @@
 #include "Card.hpp"
 
 Card::Card(char c, int i)
+	:c(c), nb(i)
 {
-	card = make_tuple(c, i);
-	cout << card << endl;
+
+	// cout << card << endl;
 }
 
 Card::Card(const Card &oldCard)
@@ -20,6 +21,6 @@ Card::~Card()
 
 ostream& operator<<(ostream& os, const Card &card)
 {
-	os << "Card| " << get<0>(card) << " " << get<1>(card) << " |";
+	os << "Card| " << card.c << " " << card.nb << " |";
 	return (os);
 }

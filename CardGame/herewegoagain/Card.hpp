@@ -3,18 +3,24 @@
 
 #include "Headers.hpp"
 
+
 class Card
 {
-	tuple <char, int> card;
+	char	c;
+	int		nb;
 public:
 	Card(char c, int i);
 	Card(const Card &oldCard);
 	Card& operator= (const Card &oldCard);
 	~Card();
 
+	// char	suit() {return c;};
+	// int		nb() {return nb;};
+
 	friend class Deck;
+	friend ostream& operator<<(ostream& os, const Card &card);
 };
 
-ostream& operator<<(ostream& os, const Card &card);
+
 
 #endif

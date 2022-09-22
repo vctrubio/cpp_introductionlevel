@@ -12,6 +12,21 @@ Deck::Deck()
 	{
 		cards[count++] = new Card(c, i);
 	};
+	c = 'B';
+	for (i = 1; i < 14; i++)
+	{
+		cards[count++] = new Card(c, i);
+	};
+	c = 'C';
+	for (i = 1; i < 14; i++)
+	{
+		cards[count++] = new Card(c, i);
+	};
+	c = 'D';
+	for (i = 1; i < 14; i++)
+	{
+		cards[count++] = new Card(c, i);
+	};
 }
 
 Deck::Deck(const Deck &oldDeck)

@@ -20,7 +20,7 @@ public:
 	// int		nb() {return nb;};
 
 	void	getWho();
-	void	setWho(void *ptr) {who = ptr;};
+	void	setWho(void *ptr) {who = ptr; taken = true;};
 
 	friend class Deck;
 	friend ostream& operator<<(ostream& os, const Card &card);

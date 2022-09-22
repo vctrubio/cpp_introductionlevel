@@ -3,18 +3,25 @@
 #include "Card.hpp"
 #include "Player.hpp"
 
+
 int main()
 {
 	Deck	*deck = new Deck();
+	Player	*p = new Player();
+	Card	*c = deck->deal();
+	Card	*c2 = deck->deal();
+	Card	*c3 = deck->deal();
+
 
 	cout << "Hello Card Game\n";
 
-	Card	*c = deck->rtnCard(0);
+	// p->dealCard(c);
+	// p->dealCard(c2);
+	// p->dealCard(c3);
 
-	Player	*p = new Player();
-
-	c->setWho((void*)p);
-	c->getWho();
-
+	// c->getWho();
+	// c->setWho((void*)p);
 	cout << *p << endl;
+
+
 }

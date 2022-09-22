@@ -60,3 +60,4 @@ Card*	Deck::deal()
 	return (cards[51]);
 	//try catch statement missing for not finding card
 }
+

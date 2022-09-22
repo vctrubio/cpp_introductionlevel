@@ -7,6 +7,7 @@
 static int	seat_number = 0;
 
 class Card;
+class Deck;
 
 class Player
 {
@@ -20,6 +21,7 @@ public:
 	~Player();
 
 	string	getName(){return name;};
+	void	dealCard(Card *card); //can be looked at being virtual void deal();
 	friend ostream&	operator<<(ostream &os, const Player &player);
 };
 

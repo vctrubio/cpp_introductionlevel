@@ -14,7 +14,7 @@ public:
 	~Deck();
 
 	Card*	rtnCard(int i) {return cards[i];};
-	virtual Card*	deal(); //deal needs to update card status and take an argument
+	virtual Card*	deal();
 };
 
 #endif

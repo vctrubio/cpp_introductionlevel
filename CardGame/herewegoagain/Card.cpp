@@ -30,8 +30,6 @@ void	Card::getWho()
 	else
 		cout << "Card in Deck\n";
 
-
-
 	// try //SOMETHING FUNNY IS HERE
 	// {
 	// 	Player	*p;

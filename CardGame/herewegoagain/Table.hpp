@@ -17,7 +17,7 @@ public:
 	Table& operator= (const Table &oldTable);
 	~Table();
 	
-	void	deal(Card *card);
+	void	tDeal(Card *card);
 };
 
 

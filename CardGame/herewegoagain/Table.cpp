@@ -6,13 +6,6 @@ Table::Table(Player *players[], int size) //Unable to find array size otherwise
 	{
 		hand[i] = nullptr;
 	};
-	// int i = 0;
-	// while(i < size)
-	// {
-	// 	p.push_front(*players[i]);
-	// 	cout << "Added :" <<  *players[i] << "\n";
-	// 	i++;
-	// }
 }
 
 Table::Table(const Table &oldTable)
@@ -28,10 +21,8 @@ Table::~Table()
 	cout << "Table deconstructor\n";
 }
 
-// I NEED  deal(Card *card).
-	//--but i dont want to repeat myself
 
-void	Table::deal(Card *card)
+void	Table::tDeal(Card *card)
 {
 	if (!hand[0])
 		hand[0] = card;

@@ -3,8 +3,9 @@
 
 #include "Headers.hpp"
 #include "Card.hpp"
+#include "Table.hpp"
 
-class Deck
+class Deck :public Table
 {
 	Card	*cards[52];
 public:

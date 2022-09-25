@@ -6,44 +6,52 @@
 #include "Table.hpp"
 
 
-class Tst {
-	Tst *next = nullptr;
-	Player	*player;
-public:
-	Tst(Player *p) {player = p;};
+list<Player*>	createPlayers(int size)
+{
+	int				j;
+	list<Player*>	players;
 
-	void appendTail(Player *p)
+	for (j = 0; j < size; j++)
 	{
-		Tst *end = new Tst(p);
-		Tst *ptr = this;
-		while (ptr->next != nullptr)
-		{
-			ptr = ptr->next;
-		}
-		ptr->next = end;
-	};
-	list<Player*> ply;
+		Player	*ptr = new Player();
+		players.push_back(ptr);
+	}
+	return (players);
 };
 
-int main()
+void			printPlayers(list<Player*> p)
 {
+  	list<Player*>::iterator ptrB;
+  	list<Player*>::iterator ptrE;
+
+	ptrB = p.begin();
+	ptrE = p.end();
+	while(ptrB != ptrE)
+	{
+        cout << **ptrB << "\n";
+		ptrB++;
+	}
+};
+
+void	dealRoundOne(Deck *deck, list<Player*>p) //2 cards to player, 3 on the table
+{
+	
+};
+
+int 			main()
+{
+	list<Player*> lstPlayers;
+	lstPlayers = createPlayers(4);
+	
 	Deck	*deck = new Deck();
-	Player	*p = new Player();
-	Player	*p2 = new Player();
-	Card	*c = deck->deal();
-	Card	*c2 = deck->deal();
-	Card	*c3 = deck->deal();
-	Card	*c4 = deck->deal();
 
-	cout << "Hello Card Game\n";
+	dealRoundOne(deck);
 
-	Player	*array[] = {p, p2};
-	Round	*round = new Round();
-
-	Tst		test(p);
-	test.appendTail(p2);
-	test.ply.push_front(p);
-
-	cout << *test.ply.front();
-	round++;
+	printPlayers(lstPlayers);
+	return (22);
 }
+
+
+/* lst of players, the head is the person that talks first,
+after round, push head to tail 
+*/

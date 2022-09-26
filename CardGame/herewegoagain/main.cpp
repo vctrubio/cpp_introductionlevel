@@ -61,6 +61,23 @@ void	dealBlind(list<Player*> *players)
 	players->pop_front();
 }
 
+void	aWinner(list<Player*> *players)
+{
+	Player	*winner = new Player();
+	Player	*tmp;
+
+	for (auto p : *players)
+	{
+		tmp = p;
+		if (tmp->combo->rank >= winner->combo->rank)
+		{
+			if (tmp->combo->card >= winner->combo->card) // OR ACES
+				winner = tmp;
+		}
+	}
+	cout << "WINNER is " << *winner << endl; //picking in pairs, but if no pairs need to see highest card
+}
+
 /*
 1.Shuffle cards
 1b.change blinds ->list.player.push
@@ -77,6 +94,7 @@ void	loop_round(Deck *deck, list<Player*> *players)
 	combo(players->front()->hand, deck->hand);
 	for (auto p : *players)
 		p->combo = calc_pair(p->hand, deck->hand);
+	aWinner(players);
 }
 
 int main()

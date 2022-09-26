@@ -6,7 +6,9 @@ Player::Player()
 	name = "PeterPan";
 	hand[0] = nullptr;
 	hand[1] = nullptr;
-	combo = NULL;
+	combo = new score();
+	combo->card = 0;
+	combo->rank = 0;
 }
 
 Player::Player(const Player &oldPlayer)
@@ -14,6 +16,7 @@ Player::Player(const Player &oldPlayer)
 
 Player& Player::operator= (const Player &oldPlayer)
 {
+	combo = oldPlayer.combo;
 	return (*this);
 }
 

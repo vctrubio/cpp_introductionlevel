@@ -6,6 +6,7 @@ Player::Player()
 	name = "PeterPan";
 	hand[0] = nullptr;
 	hand[1] = nullptr;
+	combo = NULL;
 }
 
 Player::Player(const Player &oldPlayer)

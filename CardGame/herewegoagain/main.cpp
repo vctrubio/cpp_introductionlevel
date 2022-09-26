@@ -4,6 +4,7 @@
 #include "Player.hpp"
 #include "Round.hpp"
 #include "Table.hpp"
+#include "Combo.hpp"
 
 list<Player *> createPlayers(int size)
 {
@@ -27,14 +28,16 @@ void printPlayers(list<Player *> p)
 	ptrE = p.end();
 	while (ptrB != ptrE)
 	{
-		cout << **ptrB << "\n";
+		cout << **ptrB;
+		if ((*ptrB)->combo->rank)
+			cout << "COMBO OF CARD:" << (*ptrB)->combo->card << " OF RANK: " << (*ptrB)->combo->rank;
+		cout << endl;
 		ptrB++;
 	}
 };
 
 void	dealRoundOne(Deck *deck, list<Player *> p) // 2 cards to player, 3 on the table
 {
-	//Deal 2 cards to each player and set the River
 	for (auto itr : p)
 		itr->dealCard(deck->deal());
 	for (auto itr : p)
@@ -47,10 +50,34 @@ void	dealRoundOne(Deck *deck, list<Player *> p) // 2 cards to player, 3 on the t
 void	printTable(Deck *deck)
 {
 	Table *table = deck;
-	cout << "Table::\n";
+	cout << "Table:: ";
 	cout << *table << endl;
-	// cout << static_cast<const Table &>(*deck); This also works!
+	// cout << static_cast<const Table &>(*deck); ALSO works!
 };
+
+void	dealBlind(list<Player*> *players)
+{
+	players->push_back(players->front());
+	players->pop_front();
+}
+
+/*
+1.Shuffle cards
+1b.change blinds ->list.player.push
+2.Deal cards
+3.Speak, -fold, raise, check
+4.Combination / Stake (money, or cards)
+5.Complete Round (award winner, keep records)
+*/
+void	loop_round(Deck *deck, list<Player*> *players)
+{
+	deck->shuffle();
+	dealBlind(players);
+	dealRoundOne(deck, *players);
+	combo(players->front()->hand, deck->hand);
+	for (auto p : *players)
+		p->combo = calc_pair(p->hand, deck->hand);
+}
 
 int main()
 {
@@ -58,7 +85,7 @@ int main()
 	lstPlayers = createPlayers(4);
 
 	Deck *deck = new Deck();
-	dealRoundOne(deck, lstPlayers);
+	loop_round(deck, &lstPlayers);
 
 	printPlayers(lstPlayers);
 	printTable(deck);

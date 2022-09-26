@@ -10,8 +10,8 @@ class Player;
 
 class Table
 {
-	Card			*hand[3]; //just the river.
 public:
+	Card			*hand[3]; //just the river.
 	Table();
 	Table(const Table &oldTable);
 	Table& operator= (const Table &oldTable);

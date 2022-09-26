@@ -8,13 +8,15 @@ static int	seat_number = 0;
 
 class Card;
 class Deck;
+struct score;
 
 class Player
 {
 	int		seat;
 	string	name;
-	Card	*hand[2];
 public:
+	Card	*hand[2];
+	score	*combo;
 	Player();
 	Player(const Player &oldPlayer);
 	Player& operator= (const Player &oldPlayer);

@@ -61,3 +61,11 @@ Card*	Deck::deal()
 	//try catch statement missing for not finding card
 }
 
+void	Deck::shuffle()
+{
+	srand(time(NULL));
+	int b = rand() % 10 + 1;
+	// cout << b << "IS B\n";
+	for (int i = 0; i <= b; i++)
+		random_shuffle(&cards[0], &cards[52]);
+}

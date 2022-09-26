@@ -2,7 +2,7 @@ SRCS	= $(wildcard *.cpp)
 
 OBJS	= $(SRCS:.c=.o)
 
-GCC		= g++ --std=c++17
+GCC		= g++ --std=c++14
 
 RM		= rm -f
 

@@ -4,6 +4,13 @@
 #include "Headers.hpp"
 #include "Player.hpp"
 
+struct score
+{
+	int	rank; //PAIR
+	int	card; //12
+		//BET / RAISE / FOLD
+};
+
 class Card
 {
 	char	c;
@@ -16,6 +23,8 @@ public:
 	Card& operator= (const Card &oldCard);
 	~Card();
 
+	char	getC(){return c;};
+	int		getNB(){return nb;};
 	void	getWho();
 	void	setWho(void *ptr) {who = ptr; taken = true;};
 

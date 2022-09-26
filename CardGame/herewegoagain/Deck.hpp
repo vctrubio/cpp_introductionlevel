@@ -15,6 +15,7 @@ public:
 	Deck& operator= (const Deck &oldDeck);
 	~Deck();
 
+	void	shuffle();
 	Card*	rtnCard(int i) {return cards[i];};
 	virtual Card*	deal(); //study this part.
 	

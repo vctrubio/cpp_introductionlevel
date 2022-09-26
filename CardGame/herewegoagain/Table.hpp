@@ -12,12 +12,13 @@ class Table
 {
 	Card			*hand[3]; //just the river.
 public:
-	Table(Player *players[], int size);
+	Table();
 	Table(const Table &oldTable);
 	Table& operator= (const Table &oldTable);
 	~Table();
 	
 	void	tDeal(Card *card);
+	friend ostream&	operator<<(ostream &os, const Table &table);
 };
 
 

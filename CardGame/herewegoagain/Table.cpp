@@ -1,6 +1,6 @@
 #include "Table.hpp"
 
-Table::Table(Player *players[], int size) //Unable to find array size otherwise
+Table::Table() //Unable to find array size otherwise
 {
 	for (int i = 0; i < 3; i++)
 	{
@@ -32,4 +32,16 @@ void	Table::tDeal(Card *card)
 		hand[2] = card;
 	else
 		cout << "Error CHECK- table is full\n";
+	// cout << "handed cards\n";
+}
+
+ostream&	operator<<(ostream &os, const Table &table)
+{
+	if (table.hand[0])
+		os << *table.hand[0] << " ";
+	if (table.hand[1])
+		os << *table.hand[1] << " ";
+	if (table.hand[2])
+		os << *table.hand[2] << " ";
+	return (os);
 }

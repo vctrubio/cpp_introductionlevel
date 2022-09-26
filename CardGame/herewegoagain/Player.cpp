@@ -31,10 +31,13 @@ ostream&	operator<<(ostream &os, const Player &player)
 	return (os);
 }
 
-void		Player::dealCard(Card *card)
+int		Player::dealCard(Card *card)
 {
 	if (hand[0] && hand[1])
+	{
 		cout << "Hands are full\n";
+		return (0);
+	}
 	else
 	{
 		if (!hand[0])
@@ -47,4 +50,5 @@ void		Player::dealCard(Card *card)
 		else 
 			hand[1] = card;
 	}
+	return (1);
 }

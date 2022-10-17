@@ -1,27 +1,26 @@
 #include "RobotomyRequestForm.hpp"
 
 RobotomyRequestForm::RobotomyRequestForm()
-	:_target("detarget"),
-	Form("RobotomyForm", 137, 45)
+	:Form("RobotomyForm", 137, 45),
+	_target("detarget")
 {
 }
 
 RobotomyRequestForm::RobotomyRequestForm(std::string target)
-	:_target(target),
-	Form("RobotomyForm", 137, 45)
+	:Form("RobotomyForm", 137, 45),
+	_target(target)
 {
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &oldForm)
-	:_target(oldForm._target),
-	Form("RobotomyForm", 137, 45)
+	:Form("RobotomyForm", 137, 45),
+	_target(oldForm._target)
 {
 }
 
 RobotomyRequestForm::~RobotomyRequestForm()
 {
 }
-
 RobotomyRequestForm& RobotomyRequestForm::operator= (const RobotomyRequestForm &oldForm)
 {
 	_target = oldForm._target;
@@ -30,7 +29,7 @@ RobotomyRequestForm& RobotomyRequestForm::operator= (const RobotomyRequestForm &
 
 void RobotomyRequestForm::executeAction( void ) const
 {
-	std::cout << " zzzzzzdrillllllzzzzzzz" << std::endl;
+	std::cout << "zzzzzzdrillllllzzzzzzz" << std::endl;
 	srand(time(NULL));
 	int nb = rand() % 2;
 	// std::cout << nb << " rand()\n";

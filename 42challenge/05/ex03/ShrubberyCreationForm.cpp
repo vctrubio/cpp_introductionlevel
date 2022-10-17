@@ -1,26 +1,27 @@
 #include "ShrubberyCreationForm.hpp"
 
 ShrubberyCreationForm::ShrubberyCreationForm()
-	: _target("detarget"),
-	  Form("ShrubberyForm", 145, 137)
+	:Form("ShrubberyForm", 145, 137),
+	_target("detarget")
 {
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target)
-	: _target(target),
-	  Form("ShrubberyForm", 145, 137)
+	:Form("ShrubberyForm", 145, 137),
+	_target(target)
 {
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &oldForm)
-	: _target(oldForm._target),
-	  Form("ShrubberyForm", 145, 137)
+	:Form("ShrubberyForm", 145, 137),
+	_target(oldForm._target)
 {
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {
 }
+
 
 ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationForm &oldForm)
 {

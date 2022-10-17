@@ -30,7 +30,7 @@ public:
 	//
 	void			executeFree (Bureaucrat& executor);
 	void			execute (const Bureaucrat& executor) const;
-	void			checkExecution(Bureaucrat& executor);
+	void			checkExecution(Bureaucrat& executor) const;
 	virtual void	executeAction() const = 0;
 };
 

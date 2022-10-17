@@ -50,6 +50,15 @@ public:
 	}
 };
 
+class NotSignedException : public std::exception
+{
+public:
+	const char *what() const throw()
+	{
+		return "Form: Document not signed";
+	}
+};
+
 std::ostream &operator<<(std::ostream &output, Bureaucrat &b);
 
 #endif

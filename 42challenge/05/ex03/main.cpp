@@ -10,7 +10,7 @@ RobotomyRequestForm (Required grades: sign 72, exec 45)
 PresidentialPardonForm (Required grades: sign 25, exec 5)
 */
 
-int main(int ac, char **av)
+int main()
 {
     Bureaucrat  bob("bob", 1);
     Intern      betinho;

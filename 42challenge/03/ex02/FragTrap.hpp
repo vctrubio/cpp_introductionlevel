@@ -12,7 +12,7 @@ public:
 	FragTrap& operator= (const FragTrap &oldFragTrap);
 	~FragTrap();
 
-	void	FragTrap::highFiveGuys(void);
+	void	highFiveGuys(void);
 };
 
 #endif

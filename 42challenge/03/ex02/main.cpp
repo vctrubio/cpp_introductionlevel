@@ -7,5 +7,4 @@ int main()
 	ClapTrap a("Alexa");
 	ScavTrap b("ScavMan");
 
-
 }

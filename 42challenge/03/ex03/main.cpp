@@ -1,15 +1,12 @@
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
-
+#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main()
-{
-	ClapTrap a("Alexa");
-	ScavTrap b("ScavMan");
-
-
+(
+	return 0;
 }
-
 
 
 //virutal inherticane will create the same ptr (same ClapTrap) object/instance

@@ -55,6 +55,7 @@ void	ScavTrap::attack(std::string const &target)
 {
 	if (hitPoints > 0 && energyPoints > 0)
 	{
+		energyPoints--;
 		std::cout << "ScavTrap " << name << " attack " << \
 		target << " causing " << attackDamage << " points of damage" << std::endl;
 	}

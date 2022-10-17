@@ -75,8 +75,14 @@ void	ClapTrap::takeDamage(unsigned int amount)
 
 void	ClapTrap::beRepaired(unsigned int amount)
 {
-	hitPoints += amount;
-	std::cout << name << " was repaired: " << amount << std::endl;
+	if (energyPoints > 0)
+	{
+		hitPoints += amount;
+		energyPoints--;
+		std::cout << name << " was repaired: " << amount << std::endl;
+	}
+	else
+		std::cout << "!Not enough energy points\n";
 }
 
 

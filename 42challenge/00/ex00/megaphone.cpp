@@ -17,13 +17,12 @@ void	print_cap_word(std::string str)
 	i = -1;
 	while (str[++i])
 		tmp[i] = is_capital(str[i]);
-	std::cout << tmp ;
+	std::cout << tmp << " ";
 }
 
 int	main(int ac, char **av)
 {
 	int	i;
-	int	k;
 
 	if (ac == 1)
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;

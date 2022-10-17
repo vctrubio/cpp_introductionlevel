@@ -1,8 +1,12 @@
 #include "HumanB.hpp"
 
+HumanB::HumanB(std::string name)
+	: _name(name)
+{}
+
 HumanB::~HumanB()
 {
-	std::cout << "Bye" + _name << std::endl;
+	std::cout << "Bye " + _name << std::endl;
 }
 
 void	HumanB::attack(void)

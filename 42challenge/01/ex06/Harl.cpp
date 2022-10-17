@@ -1,45 +1,45 @@
-#include "Karen.hpp"
+#include "Harl.hpp"
 
-Karen::Karen()
+Harl::Harl()
 {
-	std::cout << "Welcome Karen" << std::endl;
+	std::cout << "Welcome Harl" << std::endl;
 }
 
-Karen::~Karen()
+Harl::~Harl()
 {
 }
 
-void	Karen::debug(void)
+void	Harl::debug(void)
 {
 	std::cout << "DEBUGGING- Where is my source?" << std::endl;
 }
 
-void	Karen::info(void)
+void	Harl::info(void)
 {
 	std::cout << "INFO- Where is my source code?" << std::endl;
 }
 
-void	Karen::warning(void)
+void	Harl::warning(void)
 {
 	std::cout << "WARNING- I'm telling you if I do not get my code. OH Man Oh man" << std::endl;
 }
 
-void	Karen::error(void)
+void	Harl::error(void)
 {
-	std::cout << "ERROR- I'm telling you we're gonna have a problem around here. You act like you've never seen a karenPerson before" << std::endl;
+	std::cout << "ERROR- I'm telling you we're gonna have a problem around here. You act like you've never seen a HarlPerson before" << std::endl;
 }
 
 
-void	Karen::complain(std::string level)
+void	Harl::complain(std::string level)
 {
 	int		i = -1;
 	std::string	msg = "DIWE";
 
-	void	(Karen::*ft[4])(void) = {
-		&Karen::debug,
-		&Karen::info,
-		&Karen::warning,
-		&Karen::error,
+	void	(Harl::*ft[4])(void) = {
+		&Harl::debug,
+		&Harl::info,
+		&Harl::warning,
+		&Harl::error,
 	};
 
 	if (level == "DEBUG"

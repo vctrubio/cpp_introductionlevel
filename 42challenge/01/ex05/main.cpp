@@ -1,15 +1,15 @@
-#include "Karen.hpp"
+#include "Harl.hpp"
 
 
 int main()
 {
-	Karen	k;
+	Harl	k;
 	int	i;
 
 	i = 0;
 	while (43)
 	{
-		std::cout << "Hi Karen, press a number from 1-5 to explore your personalities" << std::endl;
+		std::cout << "Hi Harl, press a number from 1-5 to explore your personalities" << std::endl;
 		std::cin >> i;
 		if (i == 1)
 			k.complain("a");

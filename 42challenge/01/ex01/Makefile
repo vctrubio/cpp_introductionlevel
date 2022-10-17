@@ -1,9 +1,9 @@
 CC = clang++
-#FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -std=c++98
 FLAGS =
 RM = rm -f
 
-NAME = program
+NAME = Zombie
 SRCS = $(wildcard *.cpp)
 OBJS = $(SRCS:.cpp=.o)
 

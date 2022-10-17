@@ -1,14 +1,14 @@
-#include "Karen.hpp"
+#include "Harl.hpp"
 
 
 int main(int ac, char **av)
 {
-	Karen	kk;
+	Harl	h;
 
 	if (ac != 2)
 	{
 		std::cout << "Read the instruction" << std::endl;
 		exit(191);
 	}
-	kk.complain(av[1]);
+	h.complain(av[1]);
 }

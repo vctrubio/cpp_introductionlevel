@@ -10,13 +10,11 @@ std::string	gnl(std::string	&line, std::string &find, std::string &replace)
 	int i = 0;
 	
 	cpy = line;
-	while (i <= cpy.length() && cpy.length() >= find.length()) 
+	while (i <= (int)cpy.length() && cpy.length() >= find.length()) 
 	{
 		tmp = cpy.substr(i, find.length());
-//		std::cout << tmp << "|\n"; 
 		if (tmp == find)
 		{
-//			std::cout << "FOUND" << tmp << "REPLACE" << replace << std::endl;
 			i += tmp.length();
 			str += replace;
 		}
@@ -32,7 +30,6 @@ std::string	gnl(std::string	&line, std::string &find, std::string &replace)
 
 void	replace(std::string file, std::string s1, std::string s2)
 {
-//	std::cout << file + s1 + s2 << std::endl;
 	std::ifstream	inFile;
 	std::ofstream	outFile;
 	std::string	outFileName;
@@ -53,35 +50,17 @@ void	replace(std::string file, std::string s1, std::string s2)
 	}	
 
 	while (std::getline(inFile, line))
-	{
-		//std::cout << "We have LINE= " + line +'\n';
-//		std::cout << "CHECK -\n";
 		outFile << gnl(line, s1, s2) << std::endl;
-	}
 
 	outFile.close();
 	inFile.close();
 }
 
-
-
-int	validate(int ac, char **av)
+int	main(int i, char **a)
 {
-	if (ac != 4)
-	{
-		std::cout << "Try ./program testfile search replace" << std::endl;
-		return (0);
-	}
-	if (*av[1] == 0 || *av[2] == 0 || *av[3] == 0)
-		return (0);
+	if (i != 4)
+		std::cout << "NEEDS 3 arguments to run: file, find, replace\n";
+	else
+		replace(a[1], a[2], a[3]);
 	return (1);
-}
-
-int	main(int ac, char **av)
-{
-	std::string	u="file";
-	std::string	i="thi";
-	std::string	o="momy";
-
-	replace(u, i, o);
 }

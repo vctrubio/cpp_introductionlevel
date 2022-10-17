@@ -1,74 +1,87 @@
-#include "phoneBook.hpp"
+# include "PhoneBook.hpp"
 
-void	Contact::printContact(int i)
+void	PhoneBook::contact(int i)
 {
-	std::cout << std::setfill(' ') << std::setw(10);
-	std::cout << i << "|";
-	std::cout << std::setfill(' ') << std::setw(10);
-	std::cout << firstname << "|";
-	std::cout << std::setfill(' ') << std::setw(10);
-	std::cout << lastname << "|";
-	std::cout << std::setfill(' ') << std::setw(10);
-	std::cout << nickname << "|";
-	std::cout << std::setfill(' ') << std::setw(10);
-	std::cout << phone << "|";
-	std::cout << std::setfill(' ') << std::setw(10);
-	std::cout << secret << "|";
-	std::cout << std::endl;
-}
+	Contact	*c;
+	std::string	ui;
 
-void	Contact::setFirstname(std::string str)
-{
-	firstname = str;
-}
-
-void	Contact::setLastname(std::string str)
-{
-	lastname = str;
-}
-
-void	Contact::setNickname(std::string str)
-{
-	nickname = str;
-}
-
-void	Contact::setPhone(std::string str)
-{
-	phone = str;
-}
-
-void	Contact::setSecret(std:: string str)
-{
-	secret = str;
-}
-
-int	verify_number(std::string &str)
-{
-	int	i;
-
-	i = 0;
-	if (str[i] == '+' || std::isdigit(str[i]))
-		i++;
-	else
-		return (0);
-	while (i < (int)str.length())
+	c = &contacts[i];
+	while (1) 
 	{
-		if (!std::isdigit(str[i++]))
-			return (0);
+		std::cout << "Enter Firstname: " << std::endl;
+		getline(std::cin, ui);
+		if (verify_string(ui))
+		{
+			c->setFirstname(ui);
+			break;
+		}
+		else
+			std::cout << "I don't accept that. ";
 	}
-	if (str.length() > 10)
-		str = (str.substr(0, 9) + ".");
-	return (1);
+	while (1)
+	{
+		std::cout << "Enter Lastname: " << std::endl;
+		getline(std::cin, ui);
+		if (verify_string(ui))
+		{
+			c->setLastname(ui);
+			break;
+		}
+		else
+			std::cout << "I don't accept that. ";
+	}
+	while (1)
+	{
+		std::cout << "Enter Nickname: " << std::endl;
+		getline(std::cin, ui);
+		if (verify_string(ui))
+		{
+			c->setNickname(ui);
+			break;
+		}
+		else
+			std::cout << "I don't accept that. ";
+	}
+	while (1)
+	{
+		std::cout << "Enter Phone: " << std::endl;
+		getline(std::cin, ui);
+		if (verify_number(ui))
+		{
+			c->setPhone(ui);
+			break;
+		}
+		else
+			std::cout << "I don't accept that. ";
+	}
+	while (1)
+	{
+		std::cout << "Enter Dark Dark Secret: " << std::endl;
+		getline(std::cin, ui);
+		if (verify_string(ui))
+		{
+			c->setSecret(ui);
+			break;
+		}
+		else
+			std::cout << "I don't accept that. ";
+	}
 }
 
-int	verify_string(std::string &str)
+void	PhoneBook::show(int i)
 {
-	int	i;
+	Contact	*c;
+	int		k;
 
-	i = 0;
-	if (str.length() == 0)
-		return (0);
-	if (str.length() > 10)
-		str = (str.substr(0, 9) + ".");
-	return (1);
+	k = 0;
+	c = &contacts[k];
+	if (i == 0)
+		std::cout << "\nNo Contacts to show you\n";
+	else
+		for (int k = 0; k < NMAX; k++)
+		{
+			if (c[k].isEmpty() == 0)
+				break;
+			c[k].printContact(k);
+		}
 }

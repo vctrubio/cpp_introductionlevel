@@ -8,7 +8,7 @@ HumanA::HumanA(std::string n, Weapon &w)
 
 HumanA::~HumanA()
 {
-	std::cout << "Bye" + _name << std::endl;
+	std::cout << "Bye " + _name << std::endl;
 }
 
 void	HumanA::attack(void)

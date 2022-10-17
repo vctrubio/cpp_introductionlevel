@@ -2,7 +2,7 @@ CC = clang++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -f
 
-NAME = ifind
+NAME = megaphone
 SRCS = $(wildcard *.cpp)
 OBJS = $(SRCS:.cpp=.o)
 

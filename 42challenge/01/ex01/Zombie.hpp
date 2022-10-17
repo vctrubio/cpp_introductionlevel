@@ -12,7 +12,7 @@ public:
 	Zombie(std::string name);
 	Zombie();
 	~Zombie();
-	void	setName(std::string name) {this->name = name;};
+	void	setName(std::string name);
 	void	announce(void);
 };
 

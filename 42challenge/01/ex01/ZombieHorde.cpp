@@ -7,18 +7,12 @@ std::string	ft_stradd(std::string str, int i)
 	return (str);
 }
 
-Zombie* zombieHorde(int N, std::string name)
+Zombie* zombieHorde(int N, std::string name )
 {
-	Zombie	*z;
-	int		i;
-
-	std::string	str= "hello";
-	i = -1;
-	z = new Zombie[N];
-	while (++i < N)
-	{
-		z[N].setName(ft_stradd(name, i));
-		z[N].announce();
-	}
-	return (z);
+	if (N <= 0)
+		return (NULL);
+	Zombie *list = new Zombie[N];
+	for (int i = 0; i < N; i++)
+		list[i].setName(name);
+	return (list);
 }

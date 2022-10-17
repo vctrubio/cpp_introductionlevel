@@ -12,7 +12,7 @@ int main()
 	std::cout << "ADRESS of ref "  << &stringREF << std::endl;
 	std::cout << "ADRESS of ptr "  << stringPTR <<std::endl;
 
-	std::cout << "cout: MR.BRAIN REF " << stringREF<< std::endl;
 	std::cout << "cout: MR.BRAIN PTR " << *stringPTR << std::endl;
+	std::cout << "cout: MR.BRAIN REF " << stringREF<< std::endl;
 	return (0);
 }

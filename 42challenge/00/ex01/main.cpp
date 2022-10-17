@@ -1,10 +1,10 @@
-# include "phoneBook.hpp"
+# include "PhoneBook.hpp"
 
-int main(int ac, char **av)
+int main()
 {
-	Book		book;
-	int			i;
-	std::string	ui;
+	PhoneBook		book;
+	int				i;
+	std::string		ui;
 
 	i = 0;
 	while (42)
@@ -20,10 +20,7 @@ int main(int ac, char **av)
 			book.contact(i++);
 		}
 		else if (ui == "SEARCH")
-		{
 			book.show(i);
-			//search by index
-		}
 		else
 			std::cout << "Please try again \n";
 	}

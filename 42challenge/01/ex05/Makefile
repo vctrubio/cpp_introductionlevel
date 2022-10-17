@@ -1,14 +1,12 @@
 CC = clang++
-#FLAGS = -Wall -Wextra -Werror
-FLAGS =
+FLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -f
 
-NAME = program
+NAME = Harl
 SRCS = $(wildcard *.cpp)
 OBJS = $(SRCS:.cpp=.o)
 
 all = $(NAME)
-
 $(NAME): $(SRCS)
 		$(CC) $(SRCS) $(FLAGS) -o $(NAME)
 

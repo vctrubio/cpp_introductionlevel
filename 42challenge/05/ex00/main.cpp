@@ -2,21 +2,15 @@
 
 int main()
 {
-	// Bureaucrat	iB;
-	// Bureaucrat	*iA = new Bureaucrat("Ashley", 2);
-
-	// Bureaucrat *c = iA;
-
-	// (*iA)--;
-	// std::cout << "Start\n" << iA->getGrade() << std::endl;;
-	// std::cout << "1: " << c->getName() <<  c->getGrade() << std::endl;;
-
-	try 
+	try
 	{
-		Bureaucrat	iP("IPA", 212);
-		std::cout << "Succes\n";
+	Bureaucrat	*iA = new Bureaucrat("Ashley", 2);
+	(*iA)--;
+	std::cout << iA->getName() << std::endl;
 	}
-	catch(std::exception& b) {
-		std::cout << b.what() << std::endl;
+	catch(const std::exception& e)
+	{
+		std::cout << e.what() << std::endl;
 	}
+
 }

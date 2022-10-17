@@ -44,7 +44,6 @@ void Form::validateGrade()
 		throw (GradeTooHighException());
 	if (_myGrade > 150 || _exeGrade < 0)
 		throw (GradeTooLowException());
-
 }
 
 //
@@ -87,14 +86,13 @@ void Form::beSigned(Bureaucrat &b)
 		}
 	}
 }
-//
 
 void Form::checkExecution(Bureaucrat& executor) const
 {
 	if (_exeGrade < executor.getGrade())
 		throw GradeTooLowException();
 	else if (!_signed)
-		throw "Form not signed";
+		throw NotSignedException();
 }
 
 void	Form::executeFree(Bureaucrat& executor)
@@ -104,7 +102,7 @@ void	Form::executeFree(Bureaucrat& executor)
 		checkExecution(executor);
 		executeAction();
 	}
-	catch(...) 	// catch(const std::exception& e)
+	catch(...)
 	{
 		throw ;
 	}
@@ -116,7 +114,7 @@ void	Form::execute(const Bureaucrat& executor) const
 {
 	try
 	{
-		checkExecution(executor);
+		checkExecution(const_cast<Bureaucrat&>(executor));
 		executeAction();
 	}
 	catch(const std::exception& e)
@@ -124,7 +122,6 @@ void	Form::execute(const Bureaucrat& executor) const
 		throw;
 	}
 }
-
 
 //
 std::ostream &operator<<(std::ostream &output, Form &f)

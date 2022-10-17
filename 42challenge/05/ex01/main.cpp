@@ -30,7 +30,7 @@ void	tryForm()
 	try
 	{
 		Form f("Forming", 22, 22);
-		Bureaucrat d("DEMO", 23);
+		Bureaucrat d("DEMO", 21);
 		f.beSigned(d);
 	}
 	catch (std::exception &e)

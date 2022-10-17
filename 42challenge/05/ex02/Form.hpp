@@ -27,7 +27,7 @@ public:
 	int			getGrade();
 	int			getExeGrade();
 	int			getSigned();
-	//
+
 	void			executeFree (Bureaucrat& executor);
 	void			execute (const Bureaucrat& executor) const;
 	void			checkExecution(Bureaucrat& executor) const;

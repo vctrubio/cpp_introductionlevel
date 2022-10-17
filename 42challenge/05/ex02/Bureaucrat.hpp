@@ -27,8 +27,7 @@ public:
 	void 		gradeDown(int i);
 	std::string getName();
 	int 		getGrade();
-	//
-	// void		signFormTry(Form &form);
+
 	void		executeForm(const Form& form);
 };
 
@@ -47,6 +46,15 @@ public:
 	const char *what() const throw()
 	{
 		return "Bureaucrat: Grade too low";
+	}
+};
+
+class NotSignedException : public std::exception
+{
+public:
+	const char *what() const throw()
+	{
+		return "Form: Document not signed";
 	}
 };
 

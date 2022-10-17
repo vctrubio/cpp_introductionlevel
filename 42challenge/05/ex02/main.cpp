@@ -9,7 +9,6 @@ RobotomyRequestForm (Required grades: sign 72, exec 45)
 PresidentialPardonForm (Required grades: sign 25, exec 5)
 */
 
-
 // Tests taken from dda-silv repo, thanks dude ;)
 static void test_general_form_unvalid_sign(void) {
 	std::cout << "*** test_general_form_unvalid_sign ***" << std::endl;

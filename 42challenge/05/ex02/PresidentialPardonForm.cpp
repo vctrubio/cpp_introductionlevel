@@ -1,21 +1,20 @@
 #include "PresidentialPardonForm.hpp"
 
-
 PresidentialPardonForm::PresidentialPardonForm()
 	:Form("PresidentForm", 25, 5),
-	:_target("detarget")
+	_target("detarget")
 {
 }
 
 PresidentialPardonForm::PresidentialPardonForm(std::string target)
-	:_target(target),
-	Form("PresidentForm", 25, 5)
+	:Form("PresidentForm", 25, 5),
+	_target(target)
 {
 }
 
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &oldForm)
-	:_target(oldForm._target),
-	Form("PresidentForm", 25, 5)
+	:Form("PresidentForm", 25, 5),
+	_target(oldForm._target)
 {
 }
 

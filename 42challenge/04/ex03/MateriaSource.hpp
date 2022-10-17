@@ -1,8 +1,8 @@
 #ifndef MATERIASOURCE_HPP
 #define MATERIASOURCE_HPP
+#define	INVENTORY 4
 
 # include "Character.hpp"
-# include "IMateriaSource.hpp"
 
 class	MateriaSource : public AMateria
 {

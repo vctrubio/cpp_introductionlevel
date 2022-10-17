@@ -89,7 +89,7 @@ void Form::beSigned(Bureaucrat &b)
 }
 //
 
-void Form::checkExecution(Bureaucrat& executor)
+void Form::checkExecution(Bureaucrat& executor) const
 {
 	if (_exeGrade < executor.getGrade())
 		throw GradeTooLowException();
@@ -114,8 +114,15 @@ void	Form::executeFree(Bureaucrat& executor)
 
 void	Form::execute(const Bureaucrat& executor) const
 {
-	// Bureaucrat b = const_cast<class Burreaucrat*>(executor);
-	
+	try
+	{
+		checkExecution(executor);
+		executeAction();
+	}
+	catch(const std::exception& e)
+	{
+		throw;
+	}
 }
 
 

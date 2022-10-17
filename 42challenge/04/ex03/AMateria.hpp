@@ -2,6 +2,7 @@
 #define AMATERIA_HPP
 
 # include <iostream>
+
 # include "ICharacter.hpp"
 
 // forward declaration of 'ICharacter'

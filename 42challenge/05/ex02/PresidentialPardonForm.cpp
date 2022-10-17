@@ -2,8 +2,8 @@
 
 
 PresidentialPardonForm::PresidentialPardonForm()
-	:_target("detarget"),
-	Form("PresidentForm", 25, 5)
+	:Form("PresidentForm", 25, 5),
+	:_target("detarget")
 {
 }
 

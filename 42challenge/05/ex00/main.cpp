@@ -19,9 +19,4 @@ int main()
 	catch(std::exception& b) {
 		std::cout << b.what() << std::endl;
 	}
-	std::cout << "SI\n";
-
-	Bureaucrat	m("milly", 2);
-
-	std::cout << m;
 }

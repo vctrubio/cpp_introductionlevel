@@ -10,7 +10,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target `all'.  Stop.
 
 
-# Make data base, printed on Mon Oct 17 16:14:18 2022
+# Make data base, printed on Mon Oct 17 16:37:54 2022
 
 # Variables
 
@@ -32,6 +32,7 @@ LC_CTYPE = UTF-8
 CURDIR := /Users/trtp/code/42/summer22/cpp/42challenge
 # makefile
 SHELL = /bin/sh
+ 
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en-gb","availableLanguages":{},"_languagePackSupport":true}
 # environment
@@ -153,6 +154,7 @@ TERM = xterm-256color
 # environment
 VSCODE_PID = 4974
 # variable set hash-table stats:
+ 
 # Load=69/1024=7%, Rehash=0, Collisions=2/94=2%
 
 # Pattern-specific Variable Values
@@ -235,6 +237,6 @@ GNUmakefile:
 # strcache size: total = 0 / max = 0 / min = 4096 / avg = 0
 # strcache free: total = 0 / max = 0 / min = 4096 / avg = 0
 
-# Finished Make data base on Mon Oct 17 16:14:18 2022
+# Finished Make data base on Mon Oct 17 16:37:54 2022
 
  

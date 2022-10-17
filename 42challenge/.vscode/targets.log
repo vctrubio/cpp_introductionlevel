@@ -6,8 +6,11 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # PARTICULAR PURPOSE.
 
 # This program built for i386-apple-darwin11.3.0
+ 
+make: *** No rule to make target `all'.  Stop.
 
-# Make data base, printed on Mon Oct 17 15:10:38 2022
+
+# Make data base, printed on Mon Oct 17 15:45:59 2022
 
 # Variables
 
@@ -90,7 +93,7 @@ USER = trtp
 # makefile
 .DEFAULT_GOAL := 
 # environment
-TERM_SESSION_ID = 52DA28BF-7371-49EF-AC24-BADEFEF88F4F
+TERM_SESSION_ID = 3E59F408-05FA-4CDD-9A50-BB9199DCCB64
 # environment
 LESS = -R
 # automatic
@@ -120,8 +123,10 @@ XPC_SERVICE_NAME = 0
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
+ 
 +F = $(notdir $+)
 # environment
+ 
 __CF_USER_TEXT_ENCODING = 0x1F5:0x0:0x0
 # default
 MAKEFILES := 
@@ -232,8 +237,6 @@ GNUmakefile:
 # strcache size: total = 0 / max = 0 / min = 4096 / avg = 0
 # strcache free: total = 0 / max = 0 / min = 4096 / avg = 0
 
-# Finished Make data base on Mon Oct 17 15:10:38 2022
+# Finished Make data base on Mon Oct 17 15:45:59 2022
 
  
-make: *** No rule to make target `all'.  Stop.
-

@@ -8,7 +8,7 @@ Fixed::Fixed()
 
 Fixed::~Fixed()
 {
-        std::cout << "Default destructor called" << std::endl;
+    std::cout << "Default destructor called" << std::endl;
 }
 
 Fixed::Fixed(Fixed &oldnb)

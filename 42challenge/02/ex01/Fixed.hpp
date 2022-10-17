@@ -7,23 +7,24 @@
 #include <string>
 #include <cmath>
 
-class	Fixed
+class Fixed
 {
-	int			nb;
-	static const int	bits = 8;
+private:
+	int nb;
+	static const int bits = 8;
 public:
 	Fixed();
-	Fixed(int n);
-	Fixed(const float n);
+	Fixed( const int intNb );
+	Fixed( const float floatNb );
+	Fixed( const Fixed &oldNb );
+	Fixed& operator= ( const Fixed& oldNb );
 	~Fixed();
-	Fixed(Fixed &oldnb);
-	Fixed& operator= (Fixed &oldnb);
-	int	getRawBits(void) const;
-	void	setRawBits(int const rawbit);
-	float	toFloat(void) const;
-	int	toInt(void) const;
+	int getRawBits( void ) const;
+	void setRawBits( int const raw );
+	float toFloat( void ) const;
+	int toInt( void ) const;
 };
 
-std::ostream&	operator<< (std::ostream &oStream, Fixed const &f);
+std::ostream& operator<< ( std::ostream& outStream, const Fixed& objNb );
 
 #endif

@@ -1,108 +1,152 @@
 #include "Fixed.hpp"
 
 Fixed::Fixed()
+	: nb(0)
+{}
+
+Fixed::Fixed( const Fixed &oldNb )
 {
-	std::cout << "Default constructor called" << std::endl;
-	nb = 0;
+	nb = oldNb.getRawBits();
 }
 
-Fixed::Fixed(int i)
+Fixed::Fixed( const int intNb )
 {
-	std::cout << i << " :int constructor called" << std::endl;
-	nb = i << bits;
+	nb = intNb << bits;
 }
 
-Fixed::Fixed(const float i)
+Fixed::Fixed( const float floatNb )
 {
-	std::cout << i << " :float constructor called" << std::endl;
-	nb = (int)roundf(i * (1 << bits));
+	nb = (int)roundf(floatNb * (1 << bits));
+}
+
+Fixed& Fixed::operator= ( const Fixed &oldNb )
+{
+	nb = oldNb.getRawBits();
+	return (*this);
 }
 
 Fixed::~Fixed()
 {
-        std::cout << "Default destructor called" << std::endl;
 }
 
-Fixed::Fixed(Fixed &oldnb)
+int Fixed::getRawBits( void ) const
 {
-	std::cout << "Copy constructor called" << std::endl;
-	nb = oldnb.getRawBits();
+	return (nb);
 }
 
-Fixed& Fixed::operator= (Fixed &oldNb )
+void Fixed::setRawBits( int const raw )
 {
-	std::cout << "Assignation operator called" << std::endl;
-	nb = oldNb.getRawBits();
+	nb = raw;
+}
+
+float Fixed::toFloat( void ) const
+{
+	return (float)nb / (1 << bits);
+}
+
+int Fixed::toInt( void ) const
+{
+	return (nb >> bits);
+}
+
+std::ostream& operator<< ( std::ostream &outStream, const Fixed &objNb )
+{
+	outStream << objNb.toFloat();
+	return (outStream);
+}
+
+bool Fixed::operator> ( const Fixed &otherPoint )
+{
+	return (nb > otherPoint.nb);
+}
+
+bool Fixed::operator< ( const Fixed &otherPoint )
+{
+	return (nb < otherPoint.nb);
+}
+
+bool Fixed::operator>= ( const Fixed &otherPoint )
+{
+	return (nb >= otherPoint.nb);
+}
+
+bool Fixed::operator<= ( const Fixed &otherPoint )
+{
+	return (nb <= otherPoint.nb);
+}
+
+bool Fixed::operator== ( const Fixed &otherPoint )
+{
+	return (nb == otherPoint.nb);
+}
+
+bool Fixed::operator!= ( const Fixed &otherPoint )
+{
+	return (nb != otherPoint.nb);
+}
+
+
+Fixed Fixed::operator+ ( const Fixed &otherPoint )
+{
+	Fixed newNb;
+
+	newNb.setRawBits(nb + otherPoint.nb);
+	return (newNb);
+}
+
+Fixed Fixed::operator- ( const Fixed &otherPoint )
+{
+	Fixed newNb;
+
+	newNb.setRawBits(nb - otherPoint.nb);
+	return (newNb);
+}
+
+Fixed Fixed::operator* ( const Fixed &otherPoint )
+{
+	Fixed newNb;
+
+	newNb.setRawBits(nb * otherPoint.toFloat());
+	return (newNb);
+}
+
+Fixed Fixed::operator/ ( const Fixed &otherPoint )
+{
+	Fixed newNb;
+
+	newNb.setRawBits(nb / otherPoint.nb);
+	return (newNb);
+}
+
+
+Fixed Fixed::operator++ ()
+{
+	++nb;
 	return (*this);
 }
-//
-std::ostream&	operator<< (std::ostream &oStream, Fixed const &f)
+
+Fixed Fixed::operator-- ()
 {
-	oStream << f.toFloat();
-	return (oStream);
+	--nb;
+	return (*this);
 }
-//
-Fixed	Fixed::operator+ (Fixed &oldNb)
+
+Fixed Fixed::operator++ (int)
 {
-	Fixed	tmp;
+	Fixed copyNb(*this);
+
+	nb++;
+	return (copyNb);
+}
+
+Fixed Fixed::operator-- (int)
+{
+	Fixed copyNb(*this);
 	
-	std::cout << "HERE TMP IS" << tmp << "::\n";
-	tmp.setRawBits(nb + oldNb.nb);
-	return (tmp);
-}
-
-Fixed	Fixed::operator- (Fixed &oldNb)
-{
-	Fixed	tmp;
-
-	tmp.setRawBits(nb - oldNb.nb);
-	return (tmp);
-}
-
-Fixed	Fixed::operator/ (Fixed &oldNb)
-{
-	Fixed	tmp;
-
-	tmp.setRawBits(nb / oldNb.nb);
-	return (tmp);
-}
-
-Fixed	Fixed::operator* (Fixed &oldNb)
-{
-	Fixed	tmp;
-
-	tmp.setRawBits(nb * oldNb.nb);
-	return (tmp);
-}
-//
-Fixed	Fixed::operator++ ()
-{
-	nb++;
-	return (*this);
-}
-
-Fixed	Fixed::operator-- ()
-{
-	Fixed	tmp;
-
 	nb--;
-	return (tmp);
+	return (copyNb);
 }
 
-Fixed	Fixed::operator++ (int)
-{
-	nb++;
-	return (*this);
-}
-
-Fixed	Fixed::operator-- (int)
-{
-	Fixed	tmp;
-
-	nb--;;
-	return (tmp);
-}
-//
 Fixed& Fixed::min( Fixed &a, Fixed&b )
 {
 	if (a.nb <= b.nb)
@@ -117,6 +161,7 @@ Fixed& Fixed::max( Fixed &a, Fixed&b )
 	return (b);
 }
 
+
 const Fixed& Fixed::min( const Fixed &a, const Fixed&b )
 {
 	if (a.nb <= b.nb)
@@ -129,27 +174,5 @@ const Fixed& Fixed::max( const Fixed &a, const Fixed&b )
 	if (a.nb >= b.nb)
 		return (a);
 	return (b);
-}
-//
-int     Fixed::getRawBits(void) const
-{
-	std::cout << "getRawBits member function called" << std::endl;
-	return (nb);
-}
-
-void    Fixed::setRawBits(int const rawbit)
-{
-	std::cout << "setRawBits member function called" << std::endl;
-	nb = rawbit;
-}
-//
-float	Fixed::toFloat(void) const
-{
-	return ((float)(nb) / (1 << bits));
-}
-
-int	Fixed::toInt(void) const
-{
-	return (nb >> bits); 
 }
 

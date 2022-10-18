@@ -29,7 +29,7 @@ int main()
 	n.add_number(5);
 
 	int ip;
-	std::vector<int>::iterator	bg = n._nb.begin();
+	// std::vector<int>::iterator	bg = n._nb.begin();
 	ip = n._nb.at(0);
 
 	std::vector<int> p = n.rtn_ptr();

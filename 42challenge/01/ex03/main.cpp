@@ -8,7 +8,7 @@ int main()
 		Weapon club = Weapon("crude spiked club");
 		HumanA hun("hun", club);
 		hun.attack();
-		club.setType("some other type of club");
+		club.setType("some OTHER type of club");
 		hun.attack();
 	}
 	{
@@ -16,7 +16,7 @@ int main()
 		HumanB fill("fill");
 		fill.setWeapon(club);
 		fill.attack();
-		club.setType("some other type of club");
+		club.setType("some OTHER type of club");
 		fill.attack();
 	}
 }

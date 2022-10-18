@@ -1,7 +1,6 @@
 make --dry-run --keep-going --print-directory
 make: Entering directory `/Users/trtp/code/42/summer22/cpp/42challenge'
+make: Leaving directory `/Users/trtp/code/42/summer22/cpp/42challenge'
  
 make: *** No targets specified and no makefile found.  Stop.
 
-make: Leaving directory `/Users/trtp/code/42/summer22/cpp/42challenge'
- 

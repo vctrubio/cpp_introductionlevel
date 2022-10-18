@@ -18,7 +18,7 @@ public:
 		for (int i = 0; i < _size; i++)
 			content[i] = oldArray.content[i];
 	};
-	Array &operator=(Array *oldArray){};
+	Array &operator=(Array *oldArray){*this = oldArray;};
 	~Array()
 	{
 		delete[] content;
@@ -32,7 +32,6 @@ public:
 template <typename T>
 T	&Array<T>::operator[](int index)
 {
-	T	*tmp;
 	if (index >= 0 && index <= size() && content)
 	{
 		return (content[index]);

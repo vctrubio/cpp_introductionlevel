@@ -9,18 +9,19 @@
 #include <iostream>
 #include <string>
 
-template<typename X, typename F>
-
-void	iter_ft(X *addr, int len, F fn)
+template< typename T >
+void tester(T const &value)
 {
-	for (int i = 0; i < len; i++)
-		fn(addr[i]);
+	std::cout << "VALUE: " << value << std::endl;
 }
 
-template<typename T>
-void    print(T &p)
+template <typename T>
+void	iter(T *arr, size_t	len, void (*fun)(T const &))
 {
-    std::cout << p << std::endl;
+	if (!arr)
+		return;
+	for (size_t i = 0; i < len; i++)
+		fun(arr[i]);
 }
 
 #endif

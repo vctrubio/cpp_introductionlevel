@@ -63,9 +63,6 @@ int	verify_number(std::string &str)
 
 int	verify_string(std::string &str)
 {
-	int	i;
-
-	i = 0;
 	if (str.length() == 0)
 		return (0);
 	if (str.length() > 10)

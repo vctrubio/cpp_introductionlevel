@@ -3,7 +3,7 @@ CC = clang++
 FLAGS =
 RM = rm -f
 
-NAME = program
+NAME = iter
 SRCS = $(wildcard *.cpp)
 OBJS = $(SRCS:.cpp=.o)
 

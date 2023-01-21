@@ -1,6 +1,25 @@
+call plug#begin('~/.vim/plugged')
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+call plug#end()
+
+
+
+set vb
+set t_vb=
+
 syntax on
 set hidden
+
+set undofile
+let g:netrw_browse_split = 4
+let g:netrw_winsize = 80
+
+
 set autoindent
+set cursorline
+set tabstop=4
+
 set relativenumber
 filetype on
 set wildmenu
@@ -9,6 +28,10 @@ set number
 set backspace=indent,eol,start
 set showcmd
 set showmatch
+
+set hlsearch
+set incsearch
+
 if has("multi_byte")
   set encoding=utf-8
   setglobal fileencoding=utf-8

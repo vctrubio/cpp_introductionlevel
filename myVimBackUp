@@ -28,6 +28,7 @@ set number
 set backspace=indent,eol,start
 set showcmd
 set showmatch
+set noexpandtab
 
 set hlsearch
 set incsearch

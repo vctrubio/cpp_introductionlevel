@@ -19,6 +19,7 @@ let g:netrw_winsize = 80
 set autoindent
 set cursorline
 set tabstop=4
+set shiftwidth=4
 
 set relativenumber
 filetype on
@@ -32,6 +33,19 @@ set noexpandtab
 
 set hlsearch
 set incsearch
+
+
+:noremap <right> :bn<CR>
+:noremap <left> :bp<CR>
+:noremap <silent> <up> u
+:noremap <silent> <down> <C-R>
+:noremap - :Lex 20<CR>
+
+
+
+
+
+
 
 if has("multi_byte")
   set encoding=utf-8

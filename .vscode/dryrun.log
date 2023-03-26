@@ -1,5 +1,5 @@
 make --dry-run --always-make --keep-going --print-directory
-make: Entering directory `/Users/trtp/code/42/summer22/cpp'
+make: Entering directory `/Users/trtp/github/cpp_introductionlevel'
 echo "MakeMe"
-make: Leaving directory `/Users/trtp/code/42/summer22/cpp'
+make: Leaving directory `/Users/trtp/github/cpp_introductionlevel'
  

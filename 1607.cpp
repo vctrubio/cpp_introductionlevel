@@ -12,7 +12,7 @@ we must use --std=c++17 when compiling- because this method was brought out in 2
 int main()
 {
 	int	a(2);
-	int	b{3};
+	int	b(3);
  	string	mystring;
 	int	*p(nullptr);
 	char	*p2 = nullptr;

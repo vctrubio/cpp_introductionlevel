@@ -37,7 +37,7 @@ int main () {
   CVector foo (3,1);
   CVector bar (1,2);
   CVector result;
-  result = foo / bar;
+  result = foo + bar;
   cout << result.x << ',' << result.y << '\n';
   return 0;
 }
@@ -61,8 +61,9 @@ class Dummy {
 
 bool Dummy::isitme (Dummy& param)
 {
-  if (&param == this) return true;
-  else return false;
+  if (&param == this)
+    return true;
+  return false;
 }
 
 int main_b () {

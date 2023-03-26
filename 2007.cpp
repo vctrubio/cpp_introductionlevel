@@ -16,7 +16,7 @@ int main()
 	i = 202;
 
 	
-	cout << (i << 1)  << endl;
+	cout << (i << 2)  << endl;
 	
 
 

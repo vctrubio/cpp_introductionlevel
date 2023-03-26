@@ -3,8 +3,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
-
-
 set vb
 set t_vb=
 
@@ -34,17 +32,19 @@ set noexpandtab
 set hlsearch
 set incsearch
 
+let mapleader = "\<RAlt>"
+:nmap ç ç
 
-:noremap <right> :bn<CR>
-:noremap <left> :bp<CR>
-:noremap <silent> <up> u
-:noremap <silent> <down> <C-R>
-:noremap - :Lex 20<CR>
+:nnoremap <right> :bn<CR>
+:nnoremap <left> :bp<CR>
+:nnoremap - :Lex 20<CR>
+:nnoremap <space> :Ex<CR>
+:nnoremap ç :@:<CR>
 
+set fileformat=unix
 
-
-
-
+set nobackup
+set nowritebackup
 
 
 if has("multi_byte")

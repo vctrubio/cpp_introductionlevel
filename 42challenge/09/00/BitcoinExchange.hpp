@@ -38,13 +38,13 @@ public:
 		std::cout << "Date | Value" << std::endl;
 		for (it = prices.begin(); it != prices.end(); ++it)
 		{
-			if (it->second > 0 && it->second < 1001)
-			{
+			// if (it->second > 0 && it->second < 1001)
+			// {
 				timestamp = it->first;
 				tm = std::localtime(&timestamp);
 				std::strftime(buffer, sizeof(buffer), "%Y-%m-%d", tm);
 				std::cout << buffer << " | " << it->second << std::endl;
-			}
+			// }
 		}
 	}
 };

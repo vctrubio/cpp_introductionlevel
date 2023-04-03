@@ -4,6 +4,12 @@
 #include <iostream>
 #include <sstream>
 
+
+float   value(float nb, float exchange)
+{
+    return nb * exchange;
+}
+
 void    parse_csv(char *filename)
 {
 
@@ -25,7 +31,7 @@ void    parse_csv(char *filename)
             struct tm tm = {0};
             strptime(date_str.c_str(), "%Y-%m-%d", &tm);
             time_t date = mktime(&tm);
-            long price = std::stol(price_str);
+            float price = std::stof(price_str);
 
             // Add to price map
             prices.add_price(date, price);
@@ -41,5 +47,7 @@ int main(int ac, char **av)
 {  
     if (ac == 2)
         parse_csv(av[1]);
+    else
+        std::cout << "program must accept an argument.\n";
     return 1;
 }

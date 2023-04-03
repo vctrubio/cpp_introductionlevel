@@ -13,13 +13,3 @@ BitcoinExchange& BitcoinExchange::operator= (const BitcoinExchange &oldBitcoinEx
 
 BitcoinExchange::~BitcoinExchange()
 {}
-
-// void BitcoinExchange::addPrice(time_t time, long value)
-// {
-
-// }
-
-// void BitcoinExchange::print()
-// {
-	
-// }

@@ -80,7 +80,7 @@ int doStack(std::vector<int> &stack, std::string str)
     stack.clear();
     stack.push_back(rtn);
     i++;
-    std::cout << "Returning--- " << rtn << std::endl;
+    // std::cout << "Returning--- " << rtn << std::endl;
     return (rtn);
 }
 
@@ -100,7 +100,6 @@ std::vector<std::string> create_stack(char **av)
         stack.push_back(*av);
         av++;
     }
-    //if last stack is not op, return false also
     return stack;
 }
 
@@ -119,17 +118,60 @@ void init_stack(char **av)
             stack.push_back(std::stoi(*av));
         av++;
     }
-    std::cout << ":....FINAL:\n";
-    printStack(stack);
-    std::cout << ":....FINALISED:\n";
+    // std::cout << ":....FINAL:\n";
+    // printStack(stack);
+    // std::cout << ":....FINALISED:\n";
+    std::cout << i << std::endl;
+}
+
+bool isDigit(char *str)
+{
+    int i = -1;
+    while(str[++i])
+    {
+        if (str[i] >= '0' && str[i] <= '9')
+            continue;
+        break;
+    }
+    if (str[i] == 0  && i < 2) //• The numbers used in this operation will always be less than 10.
+        return true;
+    return false;
+}
+
+
+bool    validate(char **av)
+{
+    while (*av)
+    {
+        if (!isOperation(*av) && !isDigit(*av))
+        {
+            std::cout << "Parsing Errorn\n";
+            return false;
+        }
+        av++;
+    }
+    if (*(--av))
+    {
+        if (!isOperation(*av))
+        {
+            std::cout << "Last char ≠ RPN\n";
+            return false;
+        }
+    }
+    return true;
 }
 
 //validation for last char *av, make it into a vector of strings
+//takes it as argmuents, not one argument.
 int main(int ac, char **av)
 {
     if (ac == 1)
         return -1;
-
+    else
+    {
+        if (!validate(av + 1))
+            return -1;
+    }
     try 
     {
         init_stack(av + 1);
@@ -138,4 +180,5 @@ int main(int ac, char **av)
 	{
 		std::cerr << "Parsing Catch: " << e.what() << std::endl;
 	}
+    return 1;
 }

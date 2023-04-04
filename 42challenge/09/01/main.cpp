@@ -80,7 +80,7 @@ int doStack(std::vector<int> &stack, std::string str)
     stack.clear();
     stack.push_back(rtn);
     i++;
-    // std::cout << "Returning--- " << rtn << std::endl;
+    std::cout << "Returning--- " << rtn << std::endl;
     return (rtn);
 }
 
@@ -105,7 +105,7 @@ std::vector<std::string> create_stack(char **av)
 
 void init_stack(char **av)
 {
-    std::cout << "init_stack on_::" << *av << std::endl;
+    // std::cout << "init_stack on_::" << *av << std::endl;
     std::vector<int> stack;
 
     int i = 0;
@@ -118,10 +118,9 @@ void init_stack(char **av)
             stack.push_back(std::stoi(*av));
         av++;
     }
-    // std::cout << ":....FINAL:\n";
-    // printStack(stack);
-    // std::cout << ":....FINALISED:\n";
-    std::cout << i << std::endl;
+    std::cout << ":....FINAL:\n";
+    printStack(stack);
+    std::cout << ":....FINALISED:\n";
 }
 
 bool isDigit(char *str)
@@ -133,9 +132,9 @@ bool isDigit(char *str)
             continue;
         break;
     }
-    if (str[i] == 0  && i < 2) //• The numbers used in this operation will always be less than 10.
-        return true;
-    return false;
+    // if (str[i] == 0  && i < 2) //• The numbers used in this operation will always be less than 10.
+    //     return true;
+    return true;
 }
 
 
@@ -161,10 +160,10 @@ bool    validate(char **av)
     return true;
 }
 
-//validation for last char *av, make it into a vector of strings
-//takes it as argmuents, not one argument.
+
 int main(int ac, char **av)
 {
+ 
     if (ac == 1)
         return -1;
     else

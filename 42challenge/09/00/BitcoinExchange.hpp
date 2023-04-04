@@ -2,16 +2,25 @@
 #define BITCOINEXCHANGE_HPP
 
 #include "Headers.hpp"
+#include <ctime>
+#include <iostream>
+#include <sstream>
 
 class BitcoinExchange
 {
 	std::map<time_t, float> prices;
-
+    std::ifstream file;
 public:
-	BitcoinExchange();
-	BitcoinExchange(const BitcoinExchange &oldBitcoinExchange);
-	BitcoinExchange &operator=(const BitcoinExchange &oldBitcoinExchange);
-	~BitcoinExchange();
+	BitcoinExchange(char *);
+	// BitcoinExchange(const BitcoinExchange &oldBitcoinExchange);
+	// BitcoinExchange &operator=(const BitcoinExchange &oldBitcoinExchange);
+	~BitcoinExchange(){file.close();};
+
+	void	init(char *);
+	void	print(std::string);
+	bool	val_line(std::string, int);
+	float	value(std::string, std::string);
+	float	find_date(std::string date);
 
 	void add_price(time_t date, float price)
 	{

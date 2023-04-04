@@ -1,53 +1,20 @@
-#include "Headers.hpp"
 #include "BitcoinExchange.hpp"
-#include <ctime>
-#include <iostream>
-#include <sstream>
 
 
-float   value(float nb, float exchange)
-{
-    return nb * exchange;
-}
-
-void    parse_csv(char *filename)
-{
-
-    BitcoinExchange prices;
-
-    std::ifstream file(filename);
-    std::string line;
-
-    // Skip header line
-    std::getline(file, line);
-
-    // Parse data lines
-    while (std::getline(file, line)) {
-        std::stringstream ss(line);
-        std::string date_str, price_str;
-
-        if (std::getline(ss, date_str, ',') && std::getline(ss, price_str)) {
-            // Parse date and price
-            struct tm tm = {0};
-            strptime(date_str.c_str(), "%Y-%m-%d", &tm);
-            time_t date = mktime(&tm);
-            float price = std::stof(price_str);
-
-            // Add to price map
-            prices.add_price(date, price);
-        }
-    }
-
-    // Print all prices
-    prices.print_all_prices();
-}
-
-
+//Class Map Date with Price:
+//input text, print result
 int main(int ac, char **av)
 {  
-    if (ac == 2)
-        parse_csv(av[1]);
-    else
-        std::cout << "program must accept an argument.\n";
+    if (ac != 2)
+    {
+        std::cout << "program needs input txt as an argument.\n";
+        return 0;
+    }
+    //parse_csv
+    std::string filename = "../data.csv";
+    BitcoinExchange p_csv(&filename[0]);
+    // p_csv.print_all_prices();
+    p_csv.init(av[1]);
+
     return 1;
 }

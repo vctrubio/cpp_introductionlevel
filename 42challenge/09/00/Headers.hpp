@@ -20,6 +20,8 @@
 #include <iostream>
 #include <iomanip>
 #include <dirent.h>
+#include <regex>
+
 # define BLACK	"[0;30m"
 # define RED	"[0;31m"
 # define GREEN	"[0;32m"

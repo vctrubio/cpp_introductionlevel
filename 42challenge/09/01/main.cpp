@@ -1,3 +1,4 @@
+#include <sstream>
 // Reverse Polish Notation
 // Make a stack, wait for an operator, perfomr the stack to get a new stack value
 #include "Headers.hpp"
@@ -49,7 +50,6 @@ int doMul(std::vector<int> &stack)
     return rtn;
 }
 
-
 int isOperation(std::string str)
 {
     if (str == "+" || str == "-" || str == "*" || str == "/")
@@ -80,23 +80,15 @@ int doStack(std::vector<int> &stack, std::string str)
     stack.clear();
     stack.push_back(rtn);
     i++;
-    std::cout << "Returning--- " << rtn << std::endl;
+    //std::cout << "Returning--- " << rtn << std::endl;
     return (rtn);
 }
-
-bool    validate_av(std::string av)
-{
-    return true;
-}
-
 
 std::vector<std::string> create_stack(char **av)
 {
     std::vector<std::string> stack;
     while (*av)
     {
-        if (!validate_av(*av))
-            throw std::out_of_range("Out of context");
         stack.push_back(*av);
         av++;
     }
@@ -113,64 +105,86 @@ void init_stack(char **av)
     while (*av)
     {
         if (isOperation(*av))
-            i += doStack(stack, *av);
+            i = doStack(stack, *av);
         else
             stack.push_back(std::stoi(*av));
         av++;
     }
-    std::cout << ":....FINAL:\n";
+/*    std::cout << ":....FINAL:\n";
     printStack(stack);
     std::cout << ":....FINALISED:\n";
+*/
+	std::cout << GREEN << i << ENDC << std::endl;
 }
 
-bool isDigit(char *str)
+bool isDigit(const std::string& str)
 {
-    int i = -1;
-    while(str[++i])
-    {
-        if (str[i] >= '0' && str[i] <= '9')
-            continue;
-        break;
-    }
-    // if (str[i] == 0  && i < 2) //• The numbers used in this operation will always be less than 10.
-    //     return true;
-    return true;
+    return str.length() == 1 && isdigit(str[0]);
+}
+
+std::vector<std::string>	exchange(char **av)
+{
+	std::vector<std::string>	rtn;
+	std::stringstream			tmp;
+	std::string					whi;
+	char delimeter 				= 32;
+
+	while (*av)
+	{
+		//if spaces, split in spaces and push to the back of vector.
+		tmp << *av;
+		while (std::getline(tmp, whi, delimeter))
+			rtn.push_back(whi);
+		tmp.str("");
+		tmp.clear();
+		av++;
+	}
+	
+	rtn.push_back(tmp.str());
+	return rtn;
 }
 
 
-bool    validate(char **av)
+std::vector<std::string>    validate(std::vector<std::string> av)
 {
-    while (*av)
-    {
-        if (!isOperation(*av) && !isDigit(*av))
-        {
-            std::cout << "Parsing Errorn\n";
-            return false;
-        }
-        av++;
-    }
-    if (*(--av))
-    {
-        if (!isOperation(*av))
-        {
-            std::cout << "Last char ≠ RPN\n";
-            return false;
-        }
-    }
-    return true;
+	std::vector<std::string>	rtn;
+	std::vector<std::string>::iterator it = av.begin();
+
+	while (it != av.end())
+	{
+		if (!isOperation((*it)) && !isDigit((*it)))
+		{
+			std::cout << "Parsing Errorn - Check Numbers / Operations \n" << ENDC;
+			exit(101);
+		}
+		rtn.push_back(*it);
+		it++;
+	}
+	if (!isOperation(rtn.back()))
+	{
+		std::cout << "Last char ≠ RPN\n";
+		exit(2);
+	}
+	return rtn;
 }
 
 
 int main(int ac, char **av)
 {
- 
+ 	std::vector<std::string> str;
+
     if (ac == 1)
         return -1;
     else
     {
-        if (!validate(av + 1))
+		str = exchange(av + 1);
+		str.pop_back();
+        if (str.empty())
             return -1;
+		validate(str);
     }
+
+	std::cout << "GOOD TO GO ON:\n";
     try 
     {
         init_stack(av + 1);

@@ -13,19 +13,12 @@ bool is_valid_date(const std::string &date_str)
 	ss >> std::get_time(&date, "%Y-%m-%d"); // format of the input string
 
 	std::string output = ss.str();
-	// std::cout << "PRINTING: " << output << std::endl;
-	// std::cout << "PRINTING: " << date.tm_year << std::endl;
 
 	if (ss.fail())
 		return false;
-
-	// check if the parsed date is valid //PROBLEMO
 	if (date.tm_year < 0 || date.tm_mon < 0 || date.tm_mon > 11 || date.tm_mday < 1 || date.tm_mday > 31)
-	{
-		// std::cout << "FALESE\n";
 		return false;
-	}
-	// std::cout << " ISOK\n";
+
 	return true;
 }
 
@@ -44,7 +37,6 @@ void BitcoinExchange::print(std::string line)
 				  << ENDC;
 	else
 		std::cout << date << " => " << price << " = " << value(date, price) << std::endl;
-
 	// we have date, and price, now need to find it........
 }
 
@@ -70,7 +62,10 @@ float BitcoinExchange::find_date(std::string date_str) {
     std::map<time_t, float>::iterator it;
 	
 	if (prices.empty())
-		std::cout << "CHECK12 ERRRRRRORORRRRR ||||||||||||||||||||||||||||||||||\n";
+	{
+		std::cout << "Please check parsing file: EMPTY\n";
+		exit (19);
+	}
 
 
     for (it = prices.begin(); it != prices.end(); ++it) {
@@ -81,10 +76,9 @@ float BitcoinExchange::find_date(std::string date_str) {
             rtn = it->second;
         }
     }
-
-	// std::cout << std::endl << "--find_date: " << rtn << " --" << std::endl;
     return rtn;
 }
+
 float BitcoinExchange::value(std::string date, std::string price)
 {
 	float tmp = std::stof(price);
@@ -136,11 +130,7 @@ bool BitcoinExchange::val_line(std::string line, int mod)
 		cleanParse(price);
 	}
 	else
-	{
-		std::cout << date << " vs: " << price << std::endl;
-		std::cout << "NOPE ERROR\n";
 		return false;
-	}
 
 	if (mod == 0)
 	{
@@ -150,9 +140,15 @@ bool BitcoinExchange::val_line(std::string line, int mod)
 	else
 	{
 		if (!formatDate(date))
+			return false;
+		if (std::stof(price) < 0)
 		{
-			std::cout << RED << date << "-----RTNing BAD DATE\n"
-					  << ENDC;
+			std::cout << RED << "Error: not a positive number: " << ENDC;
+			return false;
+		}
+		if (std::stof(price) >= 2147483647)
+		{
+			std::cout << RED << "Error: too large of a number: " << ENDC;
 			return false;
 		}
 	}
@@ -168,8 +164,7 @@ void BitcoinExchange::init(char *filename)
 
 	if (!file.is_open())
 	{
-		std::cerr << RED << "Failed to READ\n"
-				  << ENDC;
+		std::cerr << RED << "Failed to READ\n" << ENDC;
 		exit(1);
 	}
 	else
@@ -182,15 +177,12 @@ void BitcoinExchange::init(char *filename)
 		}
 	}
 
-	std::cout << "----12121-------\n";
 	while (std::getline(file, ptr))
 	{
 		if (val_line(ptr, i++))
 			print(ptr);
 		else
-			std::cerr << RED << ptr << " BAD INPUT \n"
-					  << ENDC;
+			std::cerr << RED << ptr << " BAD INPUT \n" << ENDC;
 	}
 	file.close();
-	std::cout << "ENDING\n";
 }

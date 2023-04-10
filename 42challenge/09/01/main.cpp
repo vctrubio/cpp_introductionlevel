@@ -80,7 +80,6 @@ int doStack(std::vector<int> &stack, std::string str)
     stack.clear();
     stack.push_back(rtn);
     i++;
-    //std::cout << "Returning--- " << rtn << std::endl;
     return (rtn);
 }
 
@@ -95,25 +94,18 @@ std::vector<std::string> create_stack(char **av)
     return stack;
 }
 
-void init_stack(char **av)
+void init_stack(std::vector<std::string> av)
 {
-    // std::cout << "init_stack on_::" << *av << std::endl;
     std::vector<int> stack;
-
     int i = 0;
-    
-    while (*av)
+
+    for (std::vector<std::string>::iterator it = av.begin(); it != av.end(); it++)
     {
-        if (isOperation(*av))
-            i = doStack(stack, *av);
+        if (isOperation(*it))
+            i = doStack(stack, *it);
         else
-            stack.push_back(std::stoi(*av));
-        av++;
+            stack.push_back(std::stoi(*it));
     }
-/*    std::cout << ":....FINAL:\n";
-    printStack(stack);
-    std::cout << ":....FINALISED:\n";
-*/
 	std::cout << GREEN << i << ENDC << std::endl;
 }
 
@@ -184,10 +176,9 @@ int main(int ac, char **av)
 		validate(str);
     }
 
-	std::cout << "GOOD TO GO ON:\n";
     try 
     {
-        init_stack(av + 1);
+        init_stack(str);
     }
     catch (std::exception &e)
 	{

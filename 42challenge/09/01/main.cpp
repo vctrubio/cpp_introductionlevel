@@ -166,7 +166,10 @@ int main(int ac, char **av)
  	std::vector<std::string> str;
 
     if (ac == 1)
+    {
+        std::cout << "Error\n";
         return -1;
+    }
     else
     {
 		str = exchange(av + 1);

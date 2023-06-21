@@ -1,13 +1,22 @@
 call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'yuezk/vim-js'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'alvan/vim-closetag'
 call plug#end()
+
+let g:closetag_html_filetypes = 'html,xhtml,phtml,jsx,tsx,javascript'
+let g:closetag_filetypes = 'html,xhtml,phtml,jsx,tsx,javascript'
 
 set vb
 set t_vb=
 
 syntax on
 set hidden
+
+
 
 set undofile
 let g:netrw_browse_split = 4
@@ -32,6 +41,10 @@ set noexpandtab
 set hlsearch
 set incsearch
 
+set directory=~/.vim/swap
+set backupdir=~/.vim/backup
+set noundofile
+
 let mapleader = "\<RAlt>"
 :nmap ç ç
 
@@ -41,15 +54,13 @@ let mapleader = "\<RAlt>"
 :nnoremap <space> :Ex<CR>
 :nnoremap ç :@:<CR>
 
+
 set fileformat=unix
-
-set nobackup
-set nowritebackup
-
 
 if has("multi_byte")
   set encoding=utf-8
   setglobal fileencoding=utf-8
 else
   echoerr "Sorry, this version of (g)vim was not compiled with +multi_byte"
+  j
 endif
